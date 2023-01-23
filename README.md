@@ -1,4 +1,8 @@
-Hey this is a official old  repo of [@spotify_downloa_bot](https://t.me/Spotify_downloa_bot)
+### Deploy
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/zleqHn?referralCode=DX-MODS)
+
+
+#Hey this is a official old  repo of [@spotify_downloa_bot](https://t.me/Spotify_downloa_bot)
 #Updated to latest pyrogram 
 # Hey welcome 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+to+Spotify+Downloa+bot)](https://github.com/Masterolic/Spotify-Downloader)
