@@ -1,3 +1,9 @@
-pyrogram==2.0.38
 tgcrypto
-git+https://github.com/DX-MODS/depedency
+python-dotenv
+requests
+asgiref
+deezer-python
+spotipy
+psutil
+aiohttp
+lyricsgenius
