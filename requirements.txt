@@ -1,12 +1,3 @@
 pyrogram==2.0.38
 tgcrypto
-yt-dlp
-python-dotenv
-requests
-asgiref
-deezer-python
-spotipy
-psutil
-youtube-dl
-aiohttp
-lyricsgenius
+git+https://github.com/DX-MODS/Telegraph-Bot
