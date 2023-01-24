@@ -8,7 +8,7 @@ RUN pip3 install -U pip
 
 RUN cd /
 
-RUN git clone https://github.com/DX-MODS/DXSpotifyDL
+RUN git clone https://github.com/DX-MODS/SpotifyDL
 
 RUN cd DXSPOTIFY
 
