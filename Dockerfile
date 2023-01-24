@@ -1,14 +1,19 @@
-FROM python:3.8-slim-buster
+FROM debian:latest
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends python3-pip git \
-    && rm -rf /var/lib/apt/lists/*
-RUN pip3 install --upgrade pip
+RUN apt update && apt upgrade -y
 
-WORKDIR /music
-RUN chmod 777 /music
-RUN apt update && apt upgrade -y && apt install ffmpeg python3 python3-pip -y
-COPY requirements.txt .
-RUN pip3 install --no-cache-dir -U -r requirements.txt
-COPY . .
+RUN apt install git curl python3-pip ffmpeg -y
+
+RUN pip3 install -U pip
+
+RUN cd /
+
+RUN git clone https://github.com/DX-MODS/DXSpotifyDL
+
+RUN cd DXSPOTIFY
+
+WORKDIR /DXSPOTIFY
+
+RUN pip3 install -U -r requirements.txt
+
 CMD ["python3", "-m", "mbot"]
