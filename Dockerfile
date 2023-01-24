@@ -11,4 +11,4 @@ RUN chmod 777 /app
 
 COPY . .
 
-CMD ["python3", "-m", "mbot"]
+CMD ["python3", "-m", "mbot/__main__"]
