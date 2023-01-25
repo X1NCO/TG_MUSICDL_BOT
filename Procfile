@@ -1,1 +1,1 @@
-web: python __main__.py
+bot: python -m mbot
