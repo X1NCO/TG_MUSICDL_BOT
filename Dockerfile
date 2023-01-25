@@ -11,4 +11,4 @@ RUN apt update && apt upgrade -y && apt install ffmpeg python3 python3-pip -y
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 COPY . .
-CMD ["python", "__main__.py"]
+CMD ["python3", "-m", "mbot"]
