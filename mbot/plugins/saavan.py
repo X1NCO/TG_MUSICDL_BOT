@@ -1,5 +1,4 @@
-##### this code is removed from new update :) ######
-from mbot import Mbot , arq
+from mbot import Mbot
 from pyrogram import filters 
 from requests import get
 from io import BytesIO
