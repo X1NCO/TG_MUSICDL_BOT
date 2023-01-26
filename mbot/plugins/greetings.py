@@ -32,10 +32,10 @@ from os import execvp,sys
 async def start(client,message):
     reply_markup = [[
         InlineKeyboardButton(
-            text="Bot Channel", url="https://t.me/Spotify_downloa"),
+            text="Bot Channel", url="https://t.me/DxSpotifyDlbot"),
         InlineKeyboardButton(
             text="Repo",
-            url="https://github.com/Masterolic/Spotify-repo/"),
+            url="https://github.com/DX-MODS/SpotifyDL/"),
         InlineKeyboardButton(text="Help",callback_data="helphome")
         ],
         [
@@ -49,7 +49,7 @@ async def start(client,message):
     if message.chat.type != "private" and message.chat.id not in AUTH_CHATS and message.from_user.id not in SUDO_USERS:
         return await message.reply_text("This Bot Will Not Work In Groups Unless It's Authorized.",
                     reply_markup=InlineKeyboardMarkup(reply_markup))
-    return await message.reply_text(f"Hello {message.from_user.first_name}, I'm a Simple Music Downloader Bot. I Currently Support Download from Youtube.",
+    return await message.reply_text(f"Hello {message.from_user.first_name}, I'm a Adanced Music Downloader Bot. I Currently Support Download from Youtube,spotify,deezer,saavan.",
                     reply_markup=InlineKeyboardMarkup(reply_markup))
 
 @Mbot.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
@@ -64,7 +64,7 @@ async def send_log(_,message):
 @Mbot.on_message(filters.command("ping"))
 async def ping(client,message):
     start = datetime.now()
-    await client.send(Ping(ping_id=0))
+    await client.invoke(Ping(ping_id=0))
     ms = (datetime.now() - start).microseconds / 1000
     await message.reply_text(f"**Pong!**\nResponse time: `{ms} ms`")
 
