@@ -28,5 +28,5 @@ async def song(client, message):
     await message.reply_audio(audio=ffile, title=sname, performer=ssingers,caption=f"{sname} - from saavn",thumb=thumbnail)
     os.remove(ffile)
     os.remove(thumbnail)
-    await pak.delete())
+    await pak.delete()
 
