@@ -1,6 +1,7 @@
 pyrogram==2.0.38
 tgcrypto
-yt-dlp
+lyricsgenius
+yt-dlp 
 python-dotenv
 requests
 asgiref
@@ -9,4 +10,15 @@ spotipy
 psutil
 youtube-dl
 aiohttp
-lyricsgenius
+aiofiles
+apscheduler
+mutagen
+pymongo[srv]==3.12.3
+bs4
+motor==2.5.1
+Shazamio
+youtube_search
+youtube-search-python
+Pillow
+wget
+youtube-search-python
