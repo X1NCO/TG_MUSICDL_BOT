@@ -12,14 +12,14 @@ async def song(client, message):
         return ""
     pak = await message.reply('Downloading...')
     try:
-        r = requests.get(f"https://jostapi.herokuapp.com/saavn?query={args}")
+        r = requests.get(f"https://saavn.me/search/songs?query={args}")
     except Exception as e:
         await pak.edit(str(e))
         return
-    sname = r.json()[0]["song"]
-    slink = r.json()[0]["media_url"]
-    ssingers = r.json()[0]["primary_artists"]
-    album_id = r.json()[0]["albumid"]
+    sname = r.json()[0]["name"]
+    slink = r.json()[0]["downloadUrl"]
+    ssingers = r.json()[0]["primaryArtists"]
+    album_id = r.json()[0]["id"]
     img = r.json()[0]["image"]
     thumbnail = wget.download(img)
     file = wget.download(slink)
