@@ -62,18 +62,17 @@ BUG = environ.get("BUG", None)
 if BUG:
     BUG = int(BUG)
 
-  # this code is removed :)
- #try:
- #   ARQ_API_KEY = environ['ARQ_API_KEY']
- #   ARQ_API_URL = "https://arq.hamker.in"
- #   aiohttpsession = ClientSession()
- #   arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+try:
+    ARQ_API_KEY = environ['ARQ_API_KEY']
+    ARQ_API_URL = "https://arq.hamker.in"
+    aiohttpsession = ClientSession()
+    arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
-#except Exception as e:
-#    pass
-#    print(f"python arq key is not a valid string skiping it ...! Reason:{e}")
-#   aiohttpsession = ClientSession()
-#    arq = None
+except Exception as e:
+    pass
+    print(f"python arq key is not a valid string skiping it ...! Reason:{e}")
+    aiohttpsession = ClientSession()
+    arq = None
     
 class Mbot(Client):
     def  __init__(self):
