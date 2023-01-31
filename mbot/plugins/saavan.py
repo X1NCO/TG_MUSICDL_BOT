@@ -1,5 +1,5 @@
-from pyrogram import Client,filters
-import wget , requests,os
+from pyrogram import Client, filters
+import os , requests
 @Client.on_message(filters.command('saavn') & filters.text)
 async def song(client, message):
     try:
@@ -25,7 +25,7 @@ async def song(client, message):
     ffile = file.replace("mp4", "mp3")
     os.rename(file, ffile)
     await pak.edit('Uploading...')
-    await message.reply_audio(audio=ffile, title=sname, performer=ssingers,caption=f"[{sname}]({k['data']['results'][0]['url']}) - from saavn ",thumb=thumbnail)
+    await message.reply_audio(audio=ffile, title=sname, performer=ssingers,caption=f"[{sname}]({r['data']['results'][0]['url']}) - from saavn ",thumb=thumbnail)
     os.remove(ffile)
     os.remove(thumbnail)
     await pak.delete()
