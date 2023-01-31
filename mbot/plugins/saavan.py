@@ -16,7 +16,7 @@ async def song(client, message):
     except Exception as e:
         await pak.edit(str(e))
         return
-    sname = r.json()[0]["name"]
+    sname = r.json()[1]["name"]
     slink = r.json()[4]["downloadUrl"]
     ssingers = r.json()[0]["primaryArtists"]
     album_id = r.json()[0]["id"]
