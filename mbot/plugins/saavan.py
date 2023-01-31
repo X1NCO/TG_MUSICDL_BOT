@@ -17,10 +17,10 @@ async def song(client, message):
         await pak.edit(str(e))
         return
     sname = r.json()[0]["name"]
-    slink = r.json()[0]["downloadUrl"]
+    slink = r.json()[4]["downloadUrl"]
     ssingers = r.json()[0]["primaryArtists"]
     album_id = r.json()[0]["id"]
-    img = r.json()[0]["image"]
+    img = r.json()[2]["image"]
     thumbnail = wget.download(img)
     file = wget.download(slink)
     ffile = file.replace("mp4", "m4a")
