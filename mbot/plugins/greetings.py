@@ -9,7 +9,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 def restar():
     print("restarting")
     os.system("rm -rf /tmp/*")
-    if not os.path.exists("/tmp/thumbnails/")
+    if not os.path.exists("/tmp/thumbnails/"):
        os.mkdir("/tmp/thumbnails/")
     execl(executable, executable, "-m", "mbot")
 scheduler = BackgroundScheduler()
