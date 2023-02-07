@@ -5,6 +5,7 @@ from pyrogram.raw.functions import Ping
 from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot,AUTH_CHATS
 import os
 from os import execvp,sys , execl,environ
+from sys import executable
 from apscheduler.schedulers.background import BackgroundScheduler
 def restar():
     print("restarting")
