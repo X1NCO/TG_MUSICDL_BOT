@@ -7,6 +7,7 @@ import os
 from os import execvp,sys , execl,environ
 from sys import executable
 from apscheduler.schedulers.background import BackgroundScheduler
+db = Database(DATABASE_URL, DATABASE_NAME)
 def restar():
     print("restarting")
     os.system("rm -rf /tmp/*")
@@ -49,6 +50,13 @@ async def restart(_,message):
 @Mbot.on_message(filters.command("log") & filters.chat(SUDO_USERS))
 async def send_log(_,message):
     await message.reply_document("bot.log")
+   
+@Mbot.on_message(filters.command("users") & filters.private )
+async def sts(c: Client, m: Message):
+    user_id=m.from_user.id
+    if user_id in OWNER_ID:
+        total_users = await db.total_users_count()
+        await m.reply_text(text=f"Total Users in DB: {total_users}", quote=True)
 
 @Mbot.on_message(filters.command("ping"))
 async def ping(client,message):
