@@ -7,7 +7,7 @@ import os
 from os import execvp,sys , execl,environ
 from sys import executable
 from apscheduler.schedulers.background import BackgroundScheduler
-db = Database(DATABASE_URL, DATABASE_NAME)
+db = Database(DATABASE_URL, name)
 def restar():
     print("restarting")
     os.system("rm -rf /tmp/*")
