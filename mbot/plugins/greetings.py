@@ -1,5 +1,5 @@
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
+from pyrogram import filters, Client
+from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup, Message
 from pyrogram.raw.functions import Ping
 from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot, AUTH_CHATS, DATABASE_URL, name
 from mbot.utils.database import Database
