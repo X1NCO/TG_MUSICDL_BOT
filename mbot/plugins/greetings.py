@@ -29,7 +29,7 @@ async def start(client,message):
         ],
         [
             InlineKeyboardButton(text="Donate",
-            url="https://www.buymeacoffee.com/Masterolic"),
+            url="https://www.buymeacoffee.com/ziyankp"),
         ]]
     if LOG_GROUP:
 
@@ -61,9 +61,9 @@ HELP = {
     "Youtube": "Send **Youtube** Link in Chat to Download Song.",
     "Spotify": "Send **Spotify** Track/Playlist/Album/Show/Episode's Link. I'll Download It For You.",
     "Deezer": "Send Deezer Playlist/Album/Track Link. I'll Download It For You.",
-    "Jiosaavn": "Not Implemented yet",
-    "SoundCloud": "Not Implemented yet",
-    "Group": "Will add later."
+    "Jiosaavn": "Send Any Query eg /saavn faded",
+    "SoundCloud": "Trying to impliment",
+    "Group": "Coming Soon"
 }
 
 
