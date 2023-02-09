@@ -21,6 +21,9 @@ scheduler.start()
 
 @Mbot.on_message(filters.command("start"))
 async def start(client,message):
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(message.from_user.id)
+        await client.send_message(
     reply_markup = [[
         InlineKeyboardButton(
             text="Bot Channel", url="https://t.me/DxSpotifyDlbot"),
