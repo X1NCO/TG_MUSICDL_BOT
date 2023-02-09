@@ -37,6 +37,16 @@ async def start(client,message):
             url="https://www.buymeacoffee.com/ziyankp"),
         ]]
 
+        reply_markup = InlineKeyboardMarkup(buttons)
+
+        await message.reply_text(
+            text=f"<b>Thanks for using our bot</b>",
+            reply_markup=reply_markup,
+            disable_web_page_preview=True,
+            parse_mode=enums.ParseMode.HTML,
+            reply_to_message_id=message.id
+        )
+
 #    if LOG_GROUP:
 
 #        invite_link = await client.create_chat_invite_link(chat_id=(int(LOG_GROUP) if str(LOG_GROUP).startswith("-100") else LOG_GROUP))
