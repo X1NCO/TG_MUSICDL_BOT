@@ -23,7 +23,7 @@ try:
     BOT_TOKEN = environ['BOT_TOKEN']
     DATABASE_URL = environ['DATABASE_URL']
     name = environ['name']
-    OWNER_ID = int(environ['OWNER_ID'])
+    OWNER_ID = environ['OWNER_ID'])
 except KeyError:
     LOGGER.debug("One or More ENV variable not found.")
     sys.exit(1)
