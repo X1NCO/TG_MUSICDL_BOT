@@ -1,14 +1,14 @@
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup, Message
 from pyrogram.raw.functions import Ping
-from mbot import LOG_GROUP, SUDO_USERS, Mbot, AUTH_CHATS, DATABASE_URL, name
+from mbot import LOG_GROUP, OWNER_ID,SUDO_USERS, Mbot, AUTH_CHATS, DATABASE_URL, name
 from mbot.utils.database import Database
 import os
 from os import execvp,sys , execl,environ
 from sys import executable
 from apscheduler.schedulers.background import BackgroundScheduler
 db = Database(DATABASE_URL, name)
-OWNER_ID = 1612304850
+#OWNER_ID = 1612304850
 def restar():
     print("restarting")
     os.system("rm -rf /tmp/*")
