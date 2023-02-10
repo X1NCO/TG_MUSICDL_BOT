@@ -20,7 +20,7 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(restar, "interval", minutes=15)
 scheduler.start()
 
-@Client.on_message(filters.private & filters.command(["start"]))
+@Mbot.on_message(filters.private & filters.command(["start"]))
 async def start(client, message):
     user = message.from_user
     if not await db.is_user_exist(user.id):
@@ -32,8 +32,8 @@ async def start(client, message):
         InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/dxmodsupdates'),
         InlineKeyboardButton('🍂 𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/DXMODS_Support')
         ],[
-        InlineKeyboardButton('🍃 𝙰𝙱𝙾𝚄𝚃', callback_data='about'),
-        InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿', callback_data='help')
+        InlineKeyboardButton('🍃 𝙰𝙱𝙾𝚄𝚃', url='https//github.com/DX-MODS/'),
+        InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿', url='https//github.com/DX-MODS/')
         ]])
     if START_PIC:
         await message.reply_photo(START_PIC, caption=txt, reply_markup=button)       
