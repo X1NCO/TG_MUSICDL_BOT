@@ -2,7 +2,7 @@ from datetime import datetime
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup, Message
 from pyrogram.raw.functions import Ping
-from mbot import LOG_GROUP,SUDO_USERS, Mbot, AUTH_CHATS, DATABASE_URL, name
+from mbot import LOG_GROUP,SUDO_USERS, Mbot, AUTH_CHATS, DATABASE_URL, name, START_PIC
 from mbot.utils.database import Database
 import os
 from os import execvp,sys , execl,environ
@@ -20,32 +20,25 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(restar, "interval", minutes=15)
 scheduler.start()
 
-@Mbot.on_message(filters.command("start"))
-async def start(client,message):
-    if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(message.from_user.id)
-        await client.send_message(
-    reply_markup = [[
-        InlineKeyboardButton(
-            text="Bot Channel", url="https://t.me/DxSpotifyDlbot"),
-        InlineKeyboardButton(
-            text="Repo",
-            url="https://github.com/DX-MODS/SpotifyDL/"),
-        InlineKeyboardButton(text="Help",callback_data="helphome")
-        ],
-        [
-            InlineKeyboardButton(text="Donate",
-            url="https://www.buymeacoffee.com/ziyankp"),
-        ]]
-    if LOG_GROUP:
-
-        invite_link = await client.create_chat_invite_link(chat_id=(int(LOG_GROUP) if str(LOG_GROUP).startswith("-100") else LOG_GROUP))
-        reply_markup.append([InlineKeyboardButton("LOG Channel", url=invite_link.invite_link)])
-    if message.chat.type != "private" and message.chat.id not in AUTH_CHATS and message.from_user.id not in SUDO_USERS:
-        return await message.reply_text("This Bot Will Not Work In Groups Unless It's Authorized.",
-                    reply_markup=InlineKeyboardMarkup(reply_markup))
-    return await message.reply_text(f"Hello {message.from_user.first_name}, I'm a Simple Music Downloader Bot. I Currently Support Download from Youtube.",
-                    reply_markup=InlineKeyboardMarkup(reply_markup))
+@Client.on_message(filters.private & filters.command(["start"]))
+async def start(client, message):
+    user = message.from_user
+    if not await db.is_user_exist(user.id):
+        await db.add_user(user.id)             
+    txt=f"👋 Hai {user.mention} \n𝙸'𝚖 𝙰 𝚂𝚒𝚖𝚙𝚕𝚎 𝙵𝚒𝚕𝚎 𝚁𝚎𝚗𝚊𝚖𝚎+𝙵𝚒𝚕𝚎 𝚃𝚘 𝚅𝚒𝚍𝚎𝚘 𝙲𝚘𝚟𝚎𝚛𝚝𝚎𝚛 𝙱𝙾𝚃 𝚆𝚒𝚝𝚑 𝙿𝚎𝚛𝚖𝚊𝚗𝚎𝚗𝚝 𝚃𝚑𝚞𝚖𝚋𝚗𝚊𝚒𝚕 & 𝙲𝚞𝚜𝚝𝚘𝚖 𝙲𝚊𝚙𝚝𝚒𝚘𝚗 𝚂𝚞𝚙𝚙𝚘𝚛𝚝!"
+    button=InlineKeyboardMarkup([[
+        InlineKeyboardButton("👼 𝙳𝙴𝚅𝚂 👼", url='https//github.com/DX-MODS/')
+        ],[
+        InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/dxmodsupdates'),
+        InlineKeyboardButton('🍂 𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/DXMODS_Support')
+        ],[
+        InlineKeyboardButton('🍃 𝙰𝙱𝙾𝚄𝚃', callback_data='about'),
+        InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿', callback_data='help')
+        ]])
+    if START_PIC:
+        await message.reply_photo(START_PIC, caption=txt, reply_markup=button)       
+    else:
+        await message.reply_text(text=txt, reply_markup=button, disable_web_page_preview=True)
 
 @Mbot.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
 async def restart(_,message):
