@@ -21,9 +21,6 @@ scheduler.start()
 
 @Mbot.on_message(filters.command("start"))
 async def start(client,message):
-    if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(message.from_user.id)
-        await client.send_message(
     reply_markup = [[
         InlineKeyboardButton(
             text="Bot Channel", url="https://t.me/DxSpotifyDlbot"),
@@ -36,26 +33,15 @@ async def start(client,message):
             InlineKeyboardButton(text="Donate",
             url="https://www.buymeacoffee.com/ziyankp"),
         ]]
+    if LOG_GROUP:
 
-        reply_markup = InlineKeyboardMarkup(buttons)
-
-        await message.reply_text(
-            text=f"<b>Thanks for using our bot</b>",
-            reply_markup=reply_markup,
-            disable_web_page_preview=True,
-            parse_mode=enums.ParseMode.HTML,
-            reply_to_message_id=message.id
-        )
-
-#    if LOG_GROUP:
-
-#        invite_link = await client.create_chat_invite_link(chat_id=(int(LOG_GROUP) if str(LOG_GROUP).startswith("-100") else LOG_GROUP))
-#        reply_markup.append([InlineKeyboardButton("LOG Channel", url=invite_link.invite_link)])
-#    if message.chat.type != "private" and message.chat.id not in AUTH_CHATS and message.from_user.id not in SUDO_USERS:
-#        return await message.reply_text("This Bot Will Not Work In Groups Unless It's Authorized.",
-#                    reply_markup=InlineKeyboardMarkup(reply_markup))
-#    return await message.reply_text(f"Hello {message.from_user.first_name}, I'm a Adanced Music Downloader Bot. I Currently Support Download from Youtube,spotify,deezer,saavan.",
-#                    reply_markup=InlineKeyboardMarkup(reply_markup))
+        invite_link = await client.create_chat_invite_link(chat_id=(int(LOG_GROUP) if str(LOG_GROUP).startswith("-100") else LOG_GROUP))
+        reply_markup.append([InlineKeyboardButton("LOG Channel", url=invite_link.invite_link)])
+    if message.chat.type != "private" and message.chat.id not in AUTH_CHATS and message.from_user.id not in SUDO_USERS:
+        return await message.reply_text("This Bot Will Not Work In Groups Unless It's Authorized.",
+                    reply_markup=InlineKeyboardMarkup(reply_markup))
+    return await message.reply_text(f"Hello {message.from_user.first_name}, I'm a Simple Music Downloader Bot. I Currently Support Download from Youtube.",
+                    reply_markup=InlineKeyboardMarkup(reply_markup))
 
 @Mbot.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
 async def restart(_,message):
