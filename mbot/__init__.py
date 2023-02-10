@@ -21,8 +21,8 @@ try:
     API_ID = int(environ['API_ID'])
     API_HASH = environ['API_HASH']
     BOT_TOKEN = environ['BOT_TOKEN']
-    DATABASE_URL = environ['DATABASE_URL']
-    name = environ['name']
+    DB_URL = environ['DB_URL']
+    DB_NAME = environ['DB_NAME']
     OWNER_ID = int(environ['OWNER_ID'])
 except KeyError:
     LOGGER.debug("One or More ENV variable not found.")
