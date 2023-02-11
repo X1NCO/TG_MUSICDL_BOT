@@ -38,37 +38,3 @@ async def ping(client,message):
     await client.invoke(Ping(ping_id=0))
     ms = (datetime.now() - start).microseconds / 1000
     await message.reply_text(f"**Pong!**\nResponse time: `{ms} ms`")
-
-HELP = {
-    "Youtube": "Send **Youtube** Link in Chat to Download Song.",
-    "Spotify": "Send **Spotify** Track/Playlist/Album/Show/Episode's Link. I'll Download It For You.",
-    "Deezer": "Send Deezer Playlist/Album/Track Link. I'll Download It For You.",
-    "Jiosaavn": "Send Any Query eg /saavn faded",
-    "SoundCloud": "Trying to impliment",
-    "Group": "Coming Soon"
-}
-
-
-@Mbot.on_message(filters.command("help"))
-async def help(_,message):
-    button = [
-        [InlineKeyboardButton(text=i, callback_data=f"help_{i}")] for i in HELP
-    ]
-
-    await message.reply_text(f"Hello **{message.from_user.first_name}**, I'm **@DxSpotifyDlbot**.\nI'm Here to download your music.",
-                        reply_markup=InlineKeyboardMarkup(button))
-
-@Mbot.on_callback_query(filters.regex(r"help_(.*?)"))
-async def helpbtn(_,query):
-    i = query.data.replace("help_","")
-    button = InlineKeyboardMarkup([[InlineKeyboardButton("Back",callback_data="helphome")]])
-    text = f"Help for **{i}**\n\n{HELP[i]}"
-    await query.message.edit(text = text,reply_markup=button)
-
-@Mbot.on_callback_query(filters.regex(r"helphome"))
-async def help_home(_,query):
-    button = [
-        [InlineKeyboardButton(text=i, callback_data=f"help_{i}")] for i in HELP
-    ]
-    await query.message.edit(f"Hello **{query.from_user.first_name}**, I'm **@DxSpotifyDlbot**.\nI'm Here to download your music.",
-                        reply_markup=InlineKeyboardMarkup(button))
