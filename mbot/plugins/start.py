@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceRepl
 import random
 from mbot.utils.txt import mr
 from mbot.utils.database import db
-from config import START_PIC
+from mbot import START_PIC
 
 
 @Client.on_message(filters.private & filters.command(["start"]))
