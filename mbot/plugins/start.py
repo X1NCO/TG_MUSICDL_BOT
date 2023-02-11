@@ -65,8 +65,7 @@ async def cb_handler(client, query: CallbackQuery):
         )
     elif data == "about":
         await query.message.edit_text(
-            text=mr.ABOUT_TXT.format(client.mention),
-            disable_web_page_preview = True,
+            text=mr.ABOUT_TXT,            
             reply_markup=InlineKeyboardMarkup( [[
                #⚠️ don't change source code & source link ⚠️ #
                InlineKeyboardButton("❣️ 𝚂𝙾𝚄𝚁𝙲𝙴", url="https://github.com/DX-MODS/SpotifyDL")
