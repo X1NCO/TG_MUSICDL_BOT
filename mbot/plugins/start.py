@@ -7,7 +7,7 @@ from asyncio import sleep
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply, CallbackQuery
 import random
-from mbot.utils.txt import mr
+from mbot.utils.txt import dx
 from mbot.utils.database import db
 from mbot import START_PIC
 
