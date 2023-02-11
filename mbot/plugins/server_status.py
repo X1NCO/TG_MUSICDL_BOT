@@ -1,6 +1,7 @@
 from pyrogram import filters
 import time
 import shutil, psutil
+from mbot.utils.readabletime import *
 @DxStreamBot.on_message(filters.private & filters.regex("status"))
 async def stats(bot, update):
   currentTime = readable_time((time.time() - StartTime))
