@@ -9,8 +9,8 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceRepl
 from pyrogram.errors import FloodWait
 import humanize
 import random
-from helper.txt import mr
-from helper.database import db
+from mbot.utils.txt import mr
+from mbot.utils.database import db
 from config import START_PIC, FLOOD, ADMIN 
 
 
