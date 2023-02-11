@@ -2,8 +2,7 @@ from datetime import datetime
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup, Message
 from pyrogram.raw.functions import Ping
-from mbot import LOG_GROUP,SUDO_USERS, Mbot, AUTH_CHATS, DATABASE_URL, name, START_PIC
-from mbot.utils.database import db
+from mbot import LOG_GROUP,SUDO_USERS, Mbot, AUTH_CHATS
 import os
 from os import execvp,sys , execl,environ
 from sys import executable
