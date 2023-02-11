@@ -6,12 +6,11 @@
 from asyncio import sleep
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply, CallbackQuery
-from pyrogram.errors import FloodWait
 import humanize
 import random
 from mbot.utils.txt import mr
 from mbot.utils.database import db
-from config import START_PIC, FLOOD, ADMIN 
+from config import START_PIC
 
 
 @Client.on_message(filters.private & filters.command(["start"]))
