@@ -51,7 +51,7 @@ async def cb_handler(client, query: CallbackQuery):
             )
     elif data == "help":
         await query.message.edit_text(
-            text=mr.HELP_TXT,
+            text=dx.HELP_TXT,
             reply_markup=InlineKeyboardMarkup( [[
                #⚠️ don't change source code & source link ⚠️ #
                InlineKeyboardButton("❣️ 𝚂𝙾𝚄𝚁𝙲𝙴", url="https://github.com/DX-MODS/SpotifyDL")
@@ -65,7 +65,7 @@ async def cb_handler(client, query: CallbackQuery):
         )
     elif data == "about":
         await query.message.edit_text(
-            text=mr.ABOUT_TXT,            
+            text=dx.ABOUT_TXT,            
             reply_markup=InlineKeyboardMarkup( [[
                #⚠️ don't change source code & source link ⚠️ #
                InlineKeyboardButton("❣️ 𝚂𝙾𝚄𝚁𝙲𝙴", url="https://github.com/DX-MODS/SpotifyDL")
@@ -79,7 +79,7 @@ async def cb_handler(client, query: CallbackQuery):
         )
     elif data == "dev":
         await query.message.edit_text(
-            text=mr.DEV_TXT,
+            text=dx.DEV_TXT,
             reply_markup=InlineKeyboardMarkup( [[
                #⚠️ don't change source code & source link ⚠️ #
                InlineKeyboardButton("❣️ 𝚂𝙾𝚄𝚁𝙲𝙴", url="https://github.com/DX-MODS/SpotifyDL")
