@@ -7,7 +7,7 @@ import time
 import asyncio 
 import logging 
 import datetime
-from mbot import ADMIN
+from mbot import OWNER_ID
 from mbot.utils.database import db
 from pyrogram.types import Message
 from pyrogram import Client, filters
@@ -16,13 +16,13 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, Peer
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
  
-@Client.on_message(filters.command("users") & filters.user(ADMIN))
+@Client.on_message(filters.command("users") & filters.user(OWNER_ID))
 async def get_stats(bot :Client, message: Message):
     mr = await message.reply('**𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙳𝙴𝚃𝙰𝙸𝙻𝚂.....**')
     total_users = await db.total_users_count()
     await mr.edit( text=f"❤️‍🔥 TOTAL USER'S = `{total_users}`")
 
-@Client.on_message(filters.command("broadcast") & filters.user(ADMIN) & filters.reply)
+@Client.on_message(filters.command("broadcast") & filters.user(OWNER_ID) & filters.reply)
 async def broadcast_handler(bot: Client, m: Message):
     all_users = await db.get_all_users()
     broadcast_msg = m.reply_to_message
