@@ -7,7 +7,6 @@ import os
 from os import execvp,sys , execl,environ
 from sys import executable
 from apscheduler.schedulers.background import BackgroundScheduler
-OWNER_ID = 1612304850
 def restar():
     print("restarting")
     os.system("rm -rf /tmp/*")
@@ -27,11 +26,6 @@ async def restart(_,message):
 async def send_log(_,message):
     await message.reply_document("bot.log")
    
-@Mbot.on_message(filters.command("users") & filters.chat(OWNER_ID))
-async def sts(c: Client, m: Message):
-        total_users = await db.total_users_count()
-        await m.reply_text(text=f"Total Users in DB: {total_users}", quote=True)
-
 @Mbot.on_message(filters.command("ping"))
 async def ping(client,message):
     start = datetime.now()
