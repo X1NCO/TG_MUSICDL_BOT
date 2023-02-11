@@ -1,5 +1,5 @@
 import motor.motor_asyncio
-from config import DB_URL, DB_NAME
+from mbot import DB_URL, DB_NAME
 
 class Database:
 
