@@ -18,9 +18,9 @@ logger.setLevel(logging.INFO)
  
 @Client.on_message(filters.command("users") & filters.user(OWNER_ID))
 async def get_stats(bot :Client, message: Message):
-    mr = await message.reply('**𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙳𝙴𝚃𝙰𝙸𝙻𝚂.....**')
+    dx = await message.reply('**𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙳𝙴𝚃𝙰𝙸𝙻𝚂.....**')
     total_users = await db.total_users_count()
-    await mr.edit( text=f"❤️‍🔥 TOTAL USER'S = `{total_users}`")
+    await dx.edit( text=f"❤️‍🔥 TOTAL USER'S = `{total_users}`")
 
 @Client.on_message(filters.command("broadcast") & filters.user(OWNER_ID) & filters.reply)
 async def broadcast_handler(bot: Client, m: Message):
