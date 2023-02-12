@@ -14,7 +14,7 @@ def restar():
        os.mkdir("/tmp/thumbnails/")
     execl(executable, executable, "-m", "mbot")
 scheduler = BackgroundScheduler()
-scheduler.add_job(restar, "interval", minutes=15)
+scheduler.add_job(restar, "interval", minutes=10)
 scheduler.start()
 
 @Mbot.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
