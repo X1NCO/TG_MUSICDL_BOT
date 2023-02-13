@@ -10,7 +10,6 @@ deezer-python
 spotipy
 psutil
 youtube-dl
-aiohttp
 aiofiles
 apscheduler
 mutagen
