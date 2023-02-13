@@ -1,4 +1,5 @@
 pyrogram==2.0.38
+aiohttp==3.8.4
 tgcrypto
 lyricsgenius
 yt-dlp 
