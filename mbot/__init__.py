@@ -54,14 +54,6 @@ if BUG:
 #    print(f"python arq key is not a valid string skiping it ...! Reason:{e}")
 #   aiohttpsession = ClientSession()
 #    arq = None
-
-from aiohttp import web as webserver
-from mbot.webserver import bot_run
-PORT_CODE = environ.get("PORT", "8080")
-
-
-
-
     
 class Mbot(Client):
     def  __init__(self):
@@ -86,12 +78,7 @@ class Mbot(Client):
         for chat in AUTH_CHATS:
             await self.send_photo(chat,"https://telegra.ph/file/97bc8a091ac1b119b72e4.jpg","**Spotify Downloa Started**")
         LOGGER.info(f"Bot Started As {BOT_INFO.username}\n")
-
-        client = webserver.AppRunner(await bot_run())
-        await client.setup()
-        bind_address = "0.0.0.0"
-        await webserver.TCPSite(client, bind_address, PORT_CODE).start()
-
+    
     async def stop(self,*args):
         await super().stop()
         LOGGER.info("Bot Stopped, Bye.")
