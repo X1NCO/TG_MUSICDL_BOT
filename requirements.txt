@@ -2,14 +2,12 @@ git+https://github.com/DX-MODS/pyrogram
 aiohttp==3.8.4
 tgcrypto
 lyricsgenius
-yt-dlp 
 python-dotenv
 requests
 asgiref
 deezer-python
 spotipy
 psutil
-youtube-dl
 aiofiles
 apscheduler
 mutagen
@@ -17,7 +15,6 @@ pymongo[srv]==3.12.3
 bs4
 motor==2.5.1
 Shazamio
-youtube_search
 youtube-search-python
 Pillow
 wget
