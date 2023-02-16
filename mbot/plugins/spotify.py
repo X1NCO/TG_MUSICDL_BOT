@@ -1,3 +1,7 @@
+# Copyright (C) 2023 DX_MODS
+#Licensed under the  AGPL-3.0 License;
+#you may not use this file except in compliance with the License.
+#Author ZIYAN
 from asyncio import sleep
 #from mbot.utils.progress import progress
 from mbot import AUTH_CHATS, LOGGER, Mbot,LOG_GROUP,BUG
