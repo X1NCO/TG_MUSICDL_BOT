@@ -1,3 +1,7 @@
+# Copyright (C) 2023 DX_MODS
+#Licensed under the  AGPL-3.0 License;
+#you may not use this file except in compliance with the License.
+#Author ZIYAN
 from random import randint 
 #from youtube_dl import YoutubeDL
 from yt_dlp import YoutubeDL
