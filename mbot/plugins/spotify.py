@@ -59,7 +59,7 @@ async def spotify_dl(_,message):
             dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
             audio = FLAC(path)
             audio["YEAR_OF_RELEASE"] = song.get('year')
-            audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
+            audio["WEBSITE"] = "https://t.me/DxSpotifyDlbot"
             audio["GEEK_SCORE"] = "9"
             audio["ARTIST"] = song.get('artist')                                                                            
             audio["ALBUM"] = song.get('album')
@@ -99,7 +99,7 @@ async def spotify_dl(_,message):
                 sleeping  = await sleep(0.8)
                 audio = FLAC(path)
                 audio["YEAR_OF_RELEASE"] = song.get('year')
-                audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
+                audio["WEBSITE"] = "https://t.me/DxSpotifyDlbot"
                 audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                           
                 audio["ALBUM"] = song.get('album')
@@ -136,7 +136,7 @@ async def spotify_dl(_,message):
                 sleeping  = await sleep(0.8)
                 audio = FLAC(path)
                 audio["YEAR_OF_RELEASE"] = song.get('year')
-                audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
+                audio["WEBSITE"] = "https://t.me/DxSpotifyDlbot"
                 audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                         
                 audio["ALBUM"] = song.get('album')
@@ -175,11 +175,11 @@ async def spotify_dl(_,message):
 @Mbot.on_callback_query(filters.regex(r"feed"))
 async def feedback(_,query):
       await query.message.edit(f"Feedback 🏴‍☠️",
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=spotify_downloa_bot")]]))
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=DxSpotifyDlbot")]]))
 
 @Mbot.on_callback_query(filters.regex(r"bug"))                                                                                                          
 async def bug(_,query):                                                                                                                                  
       await query.message.edit(f"please report to the dev with above error occurred message")
       await sleep(2.3)
       await query.message.edit(f"Bug Report 🪲",
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Report to dev ", url="https://t.me/masterolic")]]))
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Report to dev ", url="https://t.me/dxziyan")]]))
