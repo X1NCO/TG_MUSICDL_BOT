@@ -10,16 +10,17 @@ from mbot import LOG_GROUP,SUDO_USERS, Mbot, AUTH_CHATS,OWNER_ID
 import os
 from os import execvp,sys , execl,environ
 from sys import executable
-from apscheduler.schedulers.background import BackgroundScheduler
-def restar():
-    print("restarting")
-    os.system("rm -rf /tmp/*")
-    if not os.path.exists("/tmp/thumbnails/"):
-       os.mkdir("/tmp/thumbnails/")
-    execl(executable, executable, "-m", "mbot")
-scheduler = BackgroundScheduler()
-scheduler.add_job(restar, "interval", minutes=10)
-scheduler.start()
+#if you are facing auto bot off issues it is because you are server needs some traffic if bot is not used it will stop the container if you are deploying in uffizi pls remove # in the below codes
+#from apscheduler.schedulers.background import BackgroundScheduler
+#def restar():
+#    print("restarting")
+#    os.system("rm -rf /tmp/*")
+#    if not os.path.exists("/tmp/thumbnails/"):
+#       os.mkdir("/tmp/thumbnails/")
+#    execl(executable, executable, "-m", "mbot")
+#scheduler = BackgroundScheduler()
+#scheduler.add_job(restar, "interval", minutes=10)
+#scheduler.start()
 
 @Mbot.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
 async def restart(_,message):
