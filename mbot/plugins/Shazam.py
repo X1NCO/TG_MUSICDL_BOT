@@ -91,13 +91,14 @@ async def shazam_(client, message):
     if not message.reply_to_message:
         return await msg.edit("`𝚁𝚎𝚙𝚕𝚢 𝚃𝚘 𝚂𝚘𝚗𝚐 𝙵𝚒𝚕𝚎`")
     if not (message.reply_to_message.audio or message.reply_to_message.voice or message.reply_to_message.video):
-        return await msg.edit("`Reply To Audio File.`")
+        return await msg.edit("`𝚁𝚎𝚙𝚕𝚢 𝚃𝚘 𝙰𝚞𝚍𝚒𝚘 𝙵𝚒𝚕𝚎.`")
     if message.reply_to_message.video:
         video_file = await message.reply_to_message.download()
         music_file = await convert_to_audio(video_file)
         dur = message.reply_to_message.video.duration
         if not music_file:
-            return await msg.edit("`Unable To Convert To Song File. Is This A Valid File?`")
+            return await msg.edit("`𝚄𝚗𝚊𝚋𝚕𝚎 𝚃𝚘 𝙲𝚘𝚗𝚟𝚎𝚛𝚝 𝚃𝚘 𝚂𝚘𝚗𝚐 𝙵𝚒𝚕𝚎. 𝙸𝚜 𝚃𝚑𝚒𝚜 𝙰 𝚅𝚊𝚕𝚒𝚍 𝙵𝚒𝚕𝚎
+?`")
     elif (message.reply_to_message.voice or message.reply_to_message.audio):
         dur = message.reply_to_message.voice.duration if message.reply_to_message.voice else message.reply_to_message.audio.duration
         music_file = await message.reply_to_message.download()
@@ -105,7 +106,7 @@ async def shazam_(client, message):
     dur = datetime.timedelta(seconds=dur)
     thumb, by, title = await shazam(music_file)
     if title is None:
-        return await msg.edit("`No Results Found.`")
+        return await msg.edit("`𝙽𝚘 𝚁𝚎𝚜𝚞𝚕𝚝𝚜 𝙵𝚘𝚞𝚗𝚍.`")
     etime = time.time()
     t_k = round(etime - stime)
     caption = f"""<b><u>𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚎𝚍 𝙱𝚢 @DxSpotifyDlbot</b></u>
