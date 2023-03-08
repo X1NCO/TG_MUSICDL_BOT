@@ -1,1 +1,1 @@
-bot: python -m mbot
+bot: python -m dxbotz
