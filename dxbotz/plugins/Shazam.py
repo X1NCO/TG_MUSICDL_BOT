@@ -97,8 +97,7 @@ async def shazam_(client, message):
         music_file = await convert_to_audio(video_file)
         dur = message.reply_to_message.video.duration
         if not music_file:
-            return await msg.edit("`𝚄𝚗𝚊𝚋𝚕𝚎 𝚃𝚘 𝙲𝚘𝚗𝚟𝚎𝚛𝚝 𝚃𝚘 𝚂𝚘𝚗𝚐 𝙵𝚒𝚕𝚎. 𝙸𝚜 𝚃𝚑𝚒𝚜 𝙰 𝚅𝚊𝚕𝚒𝚍 𝙵𝚒𝚕𝚎
-?`")
+            return await msg.edit("`𝚄𝚗𝚊𝚋𝚕𝚎 𝚃𝚘 𝙲𝚘𝚗𝚟𝚎𝚛𝚝 𝚃𝚘 𝚂𝚘𝚗𝚐 𝙵𝚒𝚕𝚎. 𝙸𝚜 𝚃𝚑𝚒𝚜 𝙰 𝚅𝚊𝚕𝚒𝚍 𝙵𝚒𝚕𝚎?`")
     elif (message.reply_to_message.voice or message.reply_to_message.audio):
         dur = message.reply_to_message.voice.duration if message.reply_to_message.voice else message.reply_to_message.audio.duration
         music_file = await message.reply_to_message.download()
