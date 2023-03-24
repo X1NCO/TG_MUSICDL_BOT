@@ -1,9 +1,20 @@
-# SpotifyDL
-Spotify Downloader Bot
+<details><summary>Deploy To Railway</summary>
+<p>
+<br>
+<a href="https://railway.app/new/template/Qe0zMt">
+  <img src="https://railway.app/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
+
+<details><summary>Deploy To Heroku</summary>
+<p>
+<br>
+<a href="https://heroku.com/deploy?template=https://github.com/DX-MODS/BIXBY-BOT">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
 
 
-### [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/A4Zuxz?referralCode=DX-MODS)
 
-### [![Deploy To Heroku]
-()]
-(https://dashboard.heroku.com/new?template=https://github.com/DX-MODS/SpotifyDL)
