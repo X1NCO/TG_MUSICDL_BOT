@@ -10,7 +10,7 @@
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/DX-MODS/SpotifyDL">
+<a href="[https://dashboard.heroku.com/new-app?template=https://github.com/DX-MODS/SpotifyDL)]">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
