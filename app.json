@@ -1,5 +1,5 @@
 {
-  "name": "Spotify Downloa",
+  "name": "SpotifyDl",
   "description": "A simple Telegram bot to download music.",
   "keywords": [
     "bot",
@@ -7,8 +7,8 @@
     "music downloader"
   ],
   "repository": "https://github.com/masterolic/",
-  "website": "https://t.me/Spotify_downloa",
-  "success_url": "https://t.me/spotify_downloa_bot",
+  "website": "https://t.me/DxSpotifyDl",
+  "success_url": "https://t.me/DxSpotifyDl",
   "env": {
     "API_ID": {
       "description": "Your Telegram API ID",
