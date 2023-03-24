@@ -6,7 +6,7 @@
     "music",
     "music downloader"
   ],
-  "repository": "https://github.com/masterolic/",
+  "repository": "https://github.com/DX-MODS/",
   "website": "https://t.me/DxSpotifyDl",
   "success_url": "https://t.me/DxSpotifyDl",
   "env": {
@@ -41,13 +41,25 @@
       "value": "",
       "required": false
     },
+    "DB_URL": {
+      "description": "add mongodb uri",
+      "value": ""
+    },
+    "DB_NAME": {
+      "description": "add db name",
+      "value": "Cluster0"
+    },
+    "START_PIC": {
+      "description": "start message pic",
+      "value": "Cluster0"
+    },
     "SPOTIPY_CLIENT_SECRET": {
       "description": "The client secret of the Spotify API",
-      "value": "0f02b7c483c04257984695007a4a8d5c"
+      "value": ""
     },
     "SPOTIPY_CLIENT_ID": {
       "description": "The client ID of the Spotify API",
-      "value": "4fe3fecfe5334023a1472516cc99d805"
+      "value": ""
     }
   },
 "buildpacks": [
