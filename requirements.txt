@@ -13,7 +13,7 @@ apscheduler
 mutagen
 pymongo[srv]==3.12.3
 bs4
-motor==2.5.1
+motor==3.1.1
 Shazamio
 youtube-search-python
 Pillow
