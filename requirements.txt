@@ -2,7 +2,7 @@ git+https://github.com/DX-MODS/pyrogram
 aiohttp==3.8.4
 tgcrypto
 lyricsgenius
-python-dotenv
+python-dotenv==0.21.1
 requests
 asgiref
 deezer-python
