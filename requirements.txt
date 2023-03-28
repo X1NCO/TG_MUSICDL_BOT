@@ -18,3 +18,4 @@ Shazamio
 youtube-search-python
 Pillow
 wget
+ffmpeg
