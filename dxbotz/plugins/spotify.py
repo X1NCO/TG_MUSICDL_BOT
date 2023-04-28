@@ -2,6 +2,7 @@
 #Licensed under the  AGPL-3.0 License;
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
+
 from asyncio import sleep
 #from dxbotz.utils.progress import progress
 from dxbotz import AUTH_CHATS, LOGGER, Dxbotz,LOG_GROUP,BUG
@@ -11,7 +12,7 @@ from dxbotz.utils.ytdl import getIds,ytdl_down,audio_opt
 import spotipy
 from os import mkdir
 import os
-import shutil
+from shutil import rmtree
 from random import randint
 import random
 #import eyed3 
@@ -19,8 +20,8 @@ from mutagen import File
 from mutagen.flac import FLAC ,Picture
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 client = spotipy.Spotify(auth_manager=spotipy.oauth2.SpotifyClientCredentials())
-#PICS = ("dxbotz/1162775.jpg dxbotz/danny-howe-bn-D2bCvpik-unsplash.jpg dxbotz/saurabh-gill-38RthwbB3nE-unsplash.jpg").split()
-@Dxbotz.on_message(filters.regex(r'https?://open.spotify.com[^\s]+') & filters.incoming | filters.regex(r'https?://open.spotify.com[^\s]+') & filters.command(["spotify","spotdl"]) | filters.incoming & filters.regex(r"spotify:") & filters.chat(AUTH_CHATS))
+#PICS = ("mbot/1162775.jpg mbot/danny-howe-bn-D2bCvpik-unsplash.jpg mbot/saurabh-gill-38RthwbB3nE-unsplash.jpg").split()
+@Mbot.on_message(filters.regex(r'https?://open.spotify.com[^\s]+') & filters.incoming | filters.regex(r'https?://open.spotify.com[^\s]+') & filters.command(["spotify","spotdl"]) | filters.incoming & filters.regex(r"spotify:") & filters.chat(AUTH_CHATS))
 async def spotify_dl(_,message):
     link = message.matches[0].group(0)
     #seep = await sleep (0.9)
@@ -44,7 +45,6 @@ async def spotify_dl(_,message):
                 DForChat =  await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
                 #reply = await message.reply_text(f"sorry we removed support of  episode 😔 pls send other types")
                 AForCopy = await message.reply_audio(fileLink,title=item[3].replace("_"," "),performer="Spotify",duration=int(item[4]),caption=f"[{item[3]}](https://open.spotify.com/episode/{item[0]})",thumb=thumbnail,quote=True)
-                shutil.rmtree(randomdir)
                 if LOG_GROUP:
                     await sleep(3.5)
                     await copy(PForCopy,AForCopy)
@@ -59,7 +59,7 @@ async def spotify_dl(_,message):
             dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
             audio = FLAC(path)
             audio["YEAR_OF_RELEASE"] = song.get('year')
-            audio["WEBSITE"] = "https://t.me/DxSpotifyDlbot"
+            audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
             audio["GEEK_SCORE"] = "9"
             audio["ARTIST"] = song.get('artist')                                                                            
             audio["ALBUM"] = song.get('album')
@@ -80,7 +80,6 @@ async def spotify_dl(_,message):
             AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
             feedback = await message.reply_text(f"Done✅",   
              reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
-            shutil.rmtree(randomdir)
             if LOG_GROUP:
                 await sleep(2.5)
                 await copy(PForCopy,AForCopy)
@@ -99,7 +98,7 @@ async def spotify_dl(_,message):
                 sleeping  = await sleep(0.8)
                 audio = FLAC(path)
                 audio["YEAR_OF_RELEASE"] = song.get('year')
-                audio["WEBSITE"] = "https://t.me/DxSpotifyDlbot"
+                audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
                 audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                           
                 audio["ALBUM"] = song.get('album')
@@ -120,7 +119,6 @@ async def spotify_dl(_,message):
                 AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
                 feedback = await message.reply_text(f"Done✅",   
                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
-                shutil.rmtree(randomdir)
                 if LOG_GROUP:
                     await sleep(2.5)
                     await copy(PForCopy,AForCopy)
@@ -157,7 +155,6 @@ async def spotify_dl(_,message):
                 AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,quote=True)
                 feedback = await message.reply_text(f"Done✅",   
                   reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
-                shutil.rmtree(randomdir)
                 if LOG_GROUP:
                     await sleep(2.5)
                     await copy(PForCopy,AForCopy)
@@ -171,13 +168,22 @@ async def spotify_dl(_,message):
         await message.reply_text(f"you can also get it from Saavn type /saavn music_name")
         if BUG:
            await forward(K,H)
+    finally:
+        await sleep(2.0)
+        try:
+            rmtree(randomdir)
+        except:
+            pass
+        await message.reply_text(f"Done✅",   
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
+        await message.reply_text(f"Check out @spotify_downloa (music)  @spotifynewss(News)")    
 
-@Dxbotz.on_callback_query(filters.regex(r"feed"))
+@Mbot.on_callback_query(filters.regex(r"feed"))
 async def feedback(_,query):
       await query.message.edit(f"Feedback 🏴‍☠️",
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=DxSpotifyDlbot")]]))
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=dxspotifydl")]]))
 
-@Dxbotz.on_callback_query(filters.regex(r"bug"))                                                                                                          
+@Mbot.on_callback_query(filters.regex(r"bug"))                                                                                                          
 async def bug(_,query):                                                                                                                                  
       await query.message.edit(f"please report to the dev with above error occurred message")
       await sleep(2.3)
