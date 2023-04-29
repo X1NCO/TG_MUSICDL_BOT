@@ -178,12 +178,12 @@ async def spotify_dl(_,message):
          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
         await message.reply_text(f"Check out @spotify_downloa (music)  @spotifynewss(News)")    
 
-@Mbot.on_callback_query(filters.regex(r"feed"))
+@Dxbotz.on_callback_query(filters.regex(r"feed"))
 async def feedback(_,query):
       await query.message.edit(f"Feedback 🏴‍☠️",
                   reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=dxspotifydl")]]))
 
-@Mbot.on_callback_query(filters.regex(r"bug"))                                                                                                          
+@Dxbotz.on_callback_query(filters.regex(r"bug"))                                                                                                          
 async def bug(_,query):                                                                                                                                  
       await query.message.edit(f"please report to the dev with above error occurred message")
       await sleep(2.3)
