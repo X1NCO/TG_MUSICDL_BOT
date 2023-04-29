@@ -22,7 +22,7 @@ LOGGER = logging.getLogger(__name__)
 
 # Mandatory Variable
 try:
-    API_ID = int(environ['API_ID'])
+    API_ID = environ['API_ID'])
     API_HASH = environ['API_HASH']
     BOT_TOKEN = environ['BOT_TOKEN']
     DB_URL = environ['DB_URL']
