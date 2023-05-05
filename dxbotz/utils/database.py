@@ -3,7 +3,7 @@
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
 import motor.motor_asyncio
-from dxbotz import DB_URL, DB_NAME
+from config import DB_URL, DB_NAME
 
 class Database:
 
