@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceRepl
 import random
 from dxbotz.utils.txt import dx
 from dxbotz.utils.database import db
-from dxbotz import START_PIC
+from config import START_PIC
 
 
 @Client.on_message(filters.private & filters.command(["start"]))
