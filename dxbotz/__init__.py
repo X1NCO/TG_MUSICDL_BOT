@@ -3,15 +3,15 @@
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
 from pyrogram import Client
+import os 
 from os import environ,sys,mkdir,path
 import logging
 from sys import executable
 #from Python_ARQ import ARQ
 from aiohttp import ClientSession
-from dotenv import load_dotenv
 import shutil
-load_dotenv("config.env")
-import os 
+from config import API_ID, API_HASH, BOT_TOKEN, AUTH_CHATS
+
 # Log
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(message)s",
@@ -19,45 +19,6 @@ logging.basicConfig(
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
-
-# Mandatory Variable
-try:
-    API_ID = int(environ['API_ID'])
-    API_HASH = environ['API_HASH']
-    BOT_TOKEN = environ['BOT_TOKEN']
-    DB_URL = environ['DB_URL']
-    DB_NAME = environ['DB_NAME']
-    OWNER_ID = int(environ['OWNER_ID'])
-except KeyError:
-    LOGGER.debug("One or More ENV variable not found.")
-    sys.exit(1)
-# Optional Variable
-SUDO_USERS = environ.get("SUDO_USERS",str(OWNER_ID)).split()
-SUDO_USERS = [int(_x) for _x in SUDO_USERS]
-if OWNER_ID not in SUDO_USERS:
-    SUDO_USERS.append(OWNER_ID)
-AUTH_CHATS = environ.get('AUTH_CHATS',None ).split()
-AUTH_CHATS = [int(_x) for _x in AUTH_CHATS]
-START_PIC = environ['START_PIC']
-LOG_GROUP = environ.get("LOG_GROUP", None)
-if LOG_GROUP:
-    LOG_GROUP = int(LOG_GROUP)
-BUG = environ.get("BUG", None)
-if BUG:
-    BUG = int(BUG)
-
-  # this code is removed :)
- #try:
- #   ARQ_API_KEY = environ['ARQ_API_KEY']
- #   ARQ_API_URL = "https://arq.hamker.in"
- #   aiohttpsession = ClientSession()
- #   arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-
-#except Exception as e:
-#    pass
-#    print(f"python arq key is not a valid string skiping it ...! Reason:{e}")
-#   aiohttpsession = ClientSession()
-#    arq = None
     
 class Dxbotz(Client):
     def  __init__(self):
@@ -72,8 +33,8 @@ class Dxbotz(Client):
             sleep_threshold=30
         )
     async def start(self):
-        os.system(f"rm -rf ./cache/")
-        os.system(f"mkdir ./cache/")
+        # os.system(f"rm -rf ./cache/")
+        # os.system(f"mkdir ./cache/")
         global BOT_INFO
         await super().start()
         BOT_INFO = await self.get_me()
