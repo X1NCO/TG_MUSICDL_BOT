@@ -53,6 +53,10 @@
       "description": "start message pic",
       "value": "Cluster0"
     },
+    "ADMIN": {
+      "description": "id of admins",
+      "value": ""
+    },
     "SPOTIPY_CLIENT_SECRET": {
       "description": "The client secret of the Spotify API",
       "value": ""
@@ -71,3 +75,4 @@
     }
   ]
 }
+
