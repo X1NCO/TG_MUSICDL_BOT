@@ -2,8 +2,11 @@
 #Licensed under the  AGPL-3.0 License;
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
-from __future__ import unicode_literals
-from pyrogram import Client , filters 
+# Copyright (C) 2023 DX_MODS
+#Licensed under the  AGPL-3.0 License;
+#you may not use this file except in compliance with the License.
+#Author ZIYAN
+from __future__ import unicode_literals 
 from os import environ,execl
 from sys import executable
 from pyrogram.errors import FloodWait 
@@ -37,12 +40,12 @@ import requests
 from typing import Tuple
 from pyrogram import filters
 from pyrogram import Client
-#from dxbotz import OWNER_ID as ADMINS
+from config import OWNER_ID as ADMINS
 import time
 from apscheduler.schedulers.background import BackgroundScheduler
 from dxbotz.utils.shazam import humanbytes, edit_or_reply, fetch_audio
 NOT_SUPPORT = [ ]
-ADMINS = 1612304850
+
 def get_arg(message):
     msg = message.text
     msg = msg.replace(" ", "", 1) if msg[1] == " " else msg
