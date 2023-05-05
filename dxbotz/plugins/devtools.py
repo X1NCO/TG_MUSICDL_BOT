@@ -10,9 +10,9 @@ import time
 import traceback
 from requests import post
 from subprocess import getoutput as run
-
+from config import ADMIN
 from pyrogram import filters
-from dxbotz import Dxbotz as Client
+from dxbotz import Dxbotz
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
@@ -20,13 +20,12 @@ from pyrogram.types import (
     Message,
 )
 
-from dxbotz import OWNER_ID as ADMINS
 def paste(text):
     url = "https://spaceb.in/api/v1/documents/"
     res = post(url, data={"content": text, "extension": "txt"})
     return f"https://spaceb.in/{res.json()['payload']['id']}"
         
-@Client.on_message(filters.user(ADMINS) & filters.command("shell", prefixes=['/', '.', '?', '-']) & filters.private)
+@Dxbotz.on_message(filters.user(ADMIN) & filters.command("shell", prefixes=['/', '.', '?', '-']) & filters.private)
 def sh(_, m: Message):
     try:
         code = m.text.replace(m.text.split(" ")[0], "")
@@ -41,7 +40,7 @@ def sh(_, m: Message):
         h = m.reply(x)
         m.reply(e)
 
-@Client.on_message(filters.user(ADMINS) & filters.command("eva"))
+@Dxbotz.on_message(filters.user(ADMIN) & filters.command("eva"))
 async def eval(client, message):
     status_message = await message.reply_text("Processing ...")
     cmd = message.text.split(" ", maxsplit=1)[1]
