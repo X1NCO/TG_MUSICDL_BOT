@@ -7,8 +7,8 @@ import time
 import asyncio 
 import logging 
 import datetime
-from dxbotz import OWNER_ID
 from dxbotz.utils.database import db
+from config import ADMIN
 from pyrogram.types import Message
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
@@ -16,13 +16,13 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, Peer
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
  
-@Client.on_message(filters.command("users") & filters.user(OWNER_ID))
+@Client.on_message(filters.command("users") & filters.user(ADMIN))
 async def get_stats(bot :Client, message: Message):
-    dx = await message.reply('**𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙳𝙴𝚃𝙰𝙸𝙻𝚂.....**')
+    mr = await message.reply('**𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙳𝙴𝚃𝙰𝙸𝙻𝚂.....**')
     total_users = await db.total_users_count()
-    await dx.edit( text=f"❤️‍🔥 TOTAL USER'S = `{total_users}`")
+    await mr.edit( text=f"❤️‍🔥 TOTAL USER'S = `{total_users}`")
 
-@Client.on_message(filters.command("broadcast") & filters.user(OWNER_ID) & filters.reply)
+@Client.on_message(filters.command("broadcast") & filters.user(ADMIN) & filters.reply)
 async def broadcast_handler(bot: Client, m: Message):
     all_users = await db.get_all_users()
     broadcast_msg = m.reply_to_message
@@ -65,4 +65,3 @@ async def send_msg(user_id, message):
     except Exception as e:
         logger.error(f"{user_id} : {e}")
         return 500
- 
