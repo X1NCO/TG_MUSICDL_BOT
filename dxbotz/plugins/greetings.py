@@ -3,10 +3,11 @@
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
 from datetime import datetime
-from pyrogram import filters, Client
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup, Message
 from pyrogram.raw.functions import Ping
-from dxbotz import LOG_GROUP,SUDO_USERS, Dxbotz, AUTH_CHATS,OWNER_ID
+from dxbotz import Dxbotz
+from config import SUDO_USERS, OWNER_ID
 import os
 from os import execvp,sys , execl,environ
 from sys import executable
