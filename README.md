@@ -33,7 +33,7 @@ more features coming soon
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `ADMIN`: User ID of Admin
 * `OWNER_ID`: User ID of Owner
-* `DB_URL`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
+* `DB_URL`: Get this value from [mongoDB](https://www.mongodb.com)
 * `DB_NAME`: Name of the database in [mongoDB](https://www.mongodb.com)
 * `SPOTIPY_CLIENT_ID`: get it from here [SpotifyDev](https://developer.spotify.com/)
 * `SPOTIPY_CLIENT_SECRET`: get it from here [SpotifyDev](https://developer.spotify.com/)
