@@ -31,16 +31,18 @@ more features coming soon
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
-* `CHANNELS`: Username or ID of channel or group. Separate multiple IDs by space
-* `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
-* `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
-* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
-* `LOG_CHANNEL` : A channel to log the activities of bot. Make sure bot is an admin in the channel.
-* `Support Chat` : Username of a Support Group / ADMIN. ( Should be username without @ and not ID
+* `ADMIN`: User ID of Admin
+* `OWNER_ID`: User ID of Owner
+* `DB_URL`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/1G1XwEOnxxo)
+* `DB_NAME`: Name of the database in [mongoDB](https://www.mongodb.com)
+* `SPOTIPY_CLIENT_ID`: get it from here [SpotifyDev](https://developer.spotify.com/)
+* `SPOTIPY_CLIENT_SECRET`: get it from here [SpotifyDev](https://developer.spotify.com/)
 ### Optional Variables
-* `PICS`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
-
-
+* `AUTH_CHATS`: Authorized Chats of bot were sends bot started message and other
+* `LOG_GROUP`: Log group were sends bots logs and errors
+* `SUDO_USERS`: User ID of sudo users
+* `BUG`: User ID were to send bugs while using plugins
+* `START_PIC`: Image that appears in start cmd
 ## Commands
 ```
 start - check bot alive
