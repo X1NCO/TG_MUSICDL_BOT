@@ -52,7 +52,7 @@ ping - pong
 log - to get the rescent errors
 status - to get status of server..
 users - to get list of my users and ids.
-broadcast - to broadcast a message to all Eva Maria users
+broadcast - to broadcast a message to all users
 ```
 
 ## TELAGRAM SUPPORT 
