@@ -40,3 +40,6 @@ if LOG_GROUP:
 BUG = environ.get("BUG", None)
 if BUG:
     BUG = int(BUG)
+genius_api = environ.get("genius_api",None)
+if genius_api:
+    genius_api = genius_api
