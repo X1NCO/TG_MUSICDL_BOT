@@ -1,6 +1,6 @@
 import os
 from config import GENIUS_API
-from pyrogram import filter
+from pyrogram import filters
 from pyrogram.types import Messages
 from dxbotz import Dxbotz
 from lyricsgenius import genius
