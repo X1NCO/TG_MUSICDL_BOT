@@ -1,7 +1,7 @@
 import os
 from config import GENIUS_API
 from pyrogram import filters
-from pyrogram.types import Messages
+from pyrogram.types import Message
 from dxbotz import Dxbotz
 from lyricsgenius import genius
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
