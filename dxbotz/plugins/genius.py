@@ -10,7 +10,7 @@ from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 api = genius.Genius(GENIUS_API,verbose=False)
 
 
-@Client.on_message(filters.command(["find", "shazam"] ))
+@Dxbotz.on_message(filters.command(["find", "shazam"] ))
 async def lyrics(dxbotz:Dxbotz,msg: Message):
 
     if len(msg.command) == 1:
