@@ -1,52 +1,41 @@
-import os
-from config import GENIUS_API
-from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
 from dxbotz import Dxbotz
-from lyricsgenius import genius
-from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
+from config import genius_api
+import requests 
+from lyricsgenius import Genius 
+import os
 
 
-api = genius.Genius(GENIUS_API,verbose=False)
+API = "https://apis.xditya.me/lyrics?song="
 
-
-@Dxbotz.on_message(filters.command(["lyrics", "genius"] ))
-async def lyrics(dxbotz:Dxbotz,msg: Message):
-
-    if len(msg.command) == 1:
-        return await msg.reply(
-            text='__Please specify the query...__', 
-        )
-
-    r_text = await msg.reply('__Searching...__')
-    song_name = msg.text.split(None, 1)[1]
-
-    lyric = api.search_song(song_name)
-
-    if lyric is None:return await r_text.edit('__No lyrics found for your query...__')
-
-    lyric_title = lyric.title
-    lyric_artist = lyric.artist
-    lyrics_text = lyric.lyrics
-
-    try:
-        await r_text.edit_text(f'__--**{lyric_title}**--__\n__{lyric_artist}\n__\n\n__{lyrics_text}__\n__Extracted by @DxSotifyDLbot')
-
-    except MessageTooLong:
-        with open(f'downloads/{lyric_title}.txt','w') as f:
-            f.write(f'{lyric_title}\n{lyric_artist}\n\n\n{lyrics_text}')
-
-        await r_text.edit_text('__Lyric too long. Sending as a text file...__')
-        await msg.reply_chat_action(
-            action='upload_document'
-        )
-        await msg.reply_document(
-            document=f'downloads/{lyric_title}.txt',
-            thumb='dxbotz/utils/dxspotifyld.jpg',
-            caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Extracted by @DxSotifyDLbot'
-        )
-
-        await r_text.delete()
-        
-        
-        os.remove(f'downloads/{lyric_title}.txt')
+def search(song):
+        r = requests.get(API + song)
+        find = r.json()
+        return find
+       
+def lyrics(song):
+        fin = search(song)
+        text = fin["lyrics"]
+        return text
+    
+@Dxbotz.on_message(filters.text & filters.command(["genius"]) & filters.private)
+async def sng(bot, message):  
+          genius = Genius(genius_api)        
+          mee = await message.reply_text("`Searching`")
+          try:
+              song = message.text.split(None, 1)[1] #.lower().strip().replace(" ", "%20")
+          except IndexError:
+              await message.reply("give me a query eg `lyrics faded`")
+          chat_id = message.from_user.id
+    #      rpl = lyrics(song)
+          songGenius = genius.search_song(song)
+          rpl = songGenius.lyrics
+          await mee.delete()
+          try:
+            await mee.delete()
+            await message.reply(rpl)
+          except Exception as e:                            
+             await message.reply_text(f"lyrics does not found for `{song} {e}`") #", quote = True, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url = f"https://t.me/Spotify newss")]]))
+          finally:
+            await message.reply("Check out @spotify_downloa_bot(music)  @spotifynewss(News)")
