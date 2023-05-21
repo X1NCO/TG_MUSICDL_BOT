@@ -1,27 +1,26 @@
-from pyrogram.errors import FloodWait,Forbidden,UserIsBlocked,MessageNotModified,ChatWriteForbidden, SlowmodeWait
+from pyrogram.errors import FloodWait,Forbidden,UserIsBlocked,MessageNotModified,ChatWriteForbidden 
+from requests.exceptions import MissingSchema
 from datetime import datetime
 import time 
 import spotipy
-from spotipy import Spotify
+from pyrogram.errors import FloodWait 
 from sys import executable
 #from Script import script
 import psutil, shutil
 from pyrogram import filters,enums
-import os
-from dotenv import load_dotenv
-load_dotenv("info.env")
-
-SPOTIPY_CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
-SPOTIPY_CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
+import os 
 #from utils import get_size
+from mutagen.mp3 import MP3
+from mutagen.id3 import ID3, APIC,error
+from mutagen.easyid3 import EasyID3
 import asyncio
 from asyncio import sleep
 #from Script import script 
-from pyrogram.types import CallbackQuery, Message
-#from database.users_chats_db import db as dib
+from pyrogram.types import CallbackQuery, Message 
+#from database.users_chats_db import db
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 from pyrogram.raw.functions import Ping
-from config import LOG_GROUP, OWNER_ID, SUDO_USERS, AUTH_CHATS,BUG
+from config import LOG_GROUP, OWNER_ID, SUDO_USERS, AUTH_CHATS, BUG
 from dxbotz import Dxbotz
 from os import execvp,sys , execl,environ,mkdir
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -37,12 +36,12 @@ import time
 import datetime
 from random import randint
 from pyrogram import filters
-from dxbotz.utils.mainhelper import parse_spotify_url,fetch_spotify_track,download_songs,thumb_down,copy,forward
+from dxbotz.utils.mainhelper import parse_spotify_url,fetch_spotify_track,download_songs,thumb_down,copy,forward 
 from dxbotz.utils.ytdl import getIds,ytdl_down,audio_opt
 from shutil import rmtree
 from mutagen import File
 from mutagen.flac import FLAC ,Picture
-from lyricsgenius import Genius
+from lyricsgenius import Genius 
 #from database.database import Database
 supported_link = [ "www.deezer.com", "open.spotify.com",
 	         "deezer.com", "spotify.com"
@@ -60,22 +59,23 @@ NO_SPAM = [
    -1001690327681,
    -1001342321483,
 ]
-#db = Database()
-genius = Genius("api_key")
+genius = Genius("ChS_Qz9KzZi-g95xGpYOT6lZhg4Ky9ciZoFFGTY-hatB5Pk7HvPhir3SQInE90k7")
 
 #@ScreenShotBot.on_callback_query()
 #async def __(c, m):
 #    await foo(c, m, cb=True)
 
 
-@Dxbotz.on_message(filters.incoming & filters.text & filters.private,group=3)
+@Mbot.on_message(filters.incoming & filters.text & filters.private,group=4)
 async def _(c, m):
+    try:
+        await foo(c, m)
+    except:
+        pass
     message = m
     if message.text.startswith('/'):
         return
     elif message.text.startswith('https:'):
-          return
-    elif message.text.startswith('http:'):
           return
     elif message.text.startswith(','):
           return
@@ -103,13 +103,13 @@ async def _(c, m):
         reply_markup=InlineKeyboardMarkup(reply_markup))
     except:
         pass
-        await message.reply(f"No results found for your {query}") 
+        await message.reply(f"No results found for your {query}")
         await K.delete()
     finally:
-         await m.continue_propagation()
+          await m.continue_propagation()
 
-@Dxbotz.on_callback_query(filters.regex(r"search"))
-async def search(Dxbotz: Dxbotz, query: CallbackQuery):
+@Mbot.on_callback_query(filters.regex(r"search"))
+async def search(Mbot: Mbot, query: CallbackQuery):
    ind, index, track= query.data.split("_")
    try:
       message = query.message
@@ -117,28 +117,29 @@ async def search(Dxbotz: Dxbotz, query: CallbackQuery):
       client = sp
       song = await fetch_spotify_track(client,track)
       item = sp.track(track_id=track)
-      thumbnail = await thumb_down(item['album']['images'][0]['url'],song.get('deezer_id'))
-      PForCopy = await query.message.reply_photo(thumbnail,caption=f"🎧 Title : `{song['name']}­­`\n🎤 Artist : `{song['artist']}`­\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`\n❗️Is Local:`{item['is_local']}`\n 🌐ISRC: `{item['external_ids']['isrc']}`\n\n[IMAGE]({item['album']['images'][0]['url']})\nTrack id:`{song['deezer_id']}`",
+      PForCopy = await query.message.reply_photo(item['album']['images'][0]['url'],caption=f"🎧 Title : `{song['name']}­­`\n🎤 Artist : `{song['artist']}`­\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`\n❗️Is Local:`{item['is_local']}`\n 🌐ISRC: `{item['external_ids']['isrc']}`\n\n[IMAGE]({item['album']['images'][0]['url']})\nTrack id:`{song['deezer_id']}`",
                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="❌", callback_data="cancel")]]))
       randomdir = f"/tmp/{str(randint(1,100000000))}"
       mkdir(randomdir)
       run = True 
       if run == True:
             try:
-               path = await download_songs(song,randomdir)
+               path = await download_songs(item,randomdir)
             except Exception as e:
                 pass
+## optional you can clear this or add this by using #
+                await message.reply(e)
           #      await Mbot.send_message(BUG,e)
                 await query.message.reply_text(f"[{song.get('name')} - {song.get('artist')}](https://open.spotify.com/track/{song.get('deezer_id')}) Track Not Found ⚠️")
          #       await message.reply_text(f"try `/saavn {song.get('name')} - {song.get('artist')}`")
+            thumbnail = await thumb_down(item['album']['images'][0]['url'],song.get('deezer_id'))
+            audio = EasyID3(path)
             try:
-                await sleep(0.6)
-                audio = FLAC(path)
                 audio["TITLE"] = f" {song.get('name')}"
-                audio["ORIGINALYEAR"] = song.get('year')
-                audio["YEAR_OF_RELEASE"] = song.get('year')
+                audio["originaldate"] = song.get('year')
+              #  audio["YEAR_OF_RELEASE"] = song.get('year')
                 audio["WEBSITE"] = "https://t.me/DxSpotifyDlbot"
-                audio["GEEK_SCORE"] = "9"
+            #    audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                            
                 audio["ALBUM"] = song.get('album')
                 audio["DATE"] = song.get('year')
@@ -154,53 +155,25 @@ async def search(Dxbotz: Dxbotz, query: CallbackQuery):
                 except:
                     pass
                 audio.save()
-                audi = File(path)
-                image = Picture() 
-                image.type = 3
-                if thumbnail.endswith('png'):
-                   mime = 'image/png'
-                else:
-                     mime = 'image/jpeg'
-                image.desc = 'front cover'
-                with open(thumbnail, 'rb') as f: # better than open(albumart, 'rb').read() ?
-                     image.data = f.read()
-
-                audi.add_picture(image)
-                audi.save()
+                try:
+                   audio = MP3(path, ID3=ID3)
+                   audio.tags.add(APIC(mime='image/jpeg',type=3,desc=u'Cover',data=open(thumbnail,'rb').read()))
+                   audio.save()
+                except Exception :
+                    pass   
             except:
                 pass
-            try:
-                dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
-              #    sleep(1)
-                AForCopy = await query.message.reply_audio(path,performer=f"{song.get('artist')}­",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail, parse_mode=enums.ParseMode.MARKDOWN,quote=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="❌", callback_data="cancel")]]))
-                await forward(PForCopy,AForCopy)
-            except Exception as e:
-                pass
-         #       await Dxbotz.send_message(BUG,e)
+            audio.save()
+            AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}­",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail, parse_mode=enums.ParseMode.MARKDOWN,quote=True)
+            await copy(PForCopy,AForCopy)
    except NameError as e:
        pass
-       await Dxbotz.send_message(BUG,e)
+       await Mbot.send_message(BUG,e)
        await query.answer("Your Query Is Too Old ❌")
-   except UserIsBlocked:
-        pass
-   except (FileNotFoundError, OSError):
-        pass
-        await query.answer('Sorry, We Are Unable To Procced It 🤕❣️')
-   except FloodWait as e:
-        pass
-        await sleep(e.value)
-        await query.answer(f"Telegram says: [420 FLOOD_WAIT_X] - A wait of {e.value} seconds is required !")
-   except SlowmodeWait as e:
-       pass
-       await sleep(e.value)
-   except RPCError:
-        pass
-        await query.answer(f"telegram says 500 error,so please try again later.❣️")
    except Exception as e: 
        pass
        await query.answer("Sorry, We Are Unable To Procced It 🤕❣️")
-       await Dxbotz.send_message(BUG,f"Query Raised Erorr {e} On {query.message.chat.id} {query.message.from_user.mention}")
+    #   await Mbot.send_message(BUG,f"Query Raised Erorr {e} On {query.message.chat.id} {query.message.from_user.mention}")
    finally: 
         await sleep(2.0)
         try:
@@ -210,6 +183,6 @@ async def search(Dxbotz: Dxbotz, query: CallbackQuery):
         try:
             await query.message.reply_text(f"Done✅",   
          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
-            await query.message.reply_text(f"Check out @dxmodsupdates (updates)  @DxSpotifyDlbot(mussic)")
+            await query.message.reply_text(f"Check out @dxmodsupdates(updates)  @dxziyan(owner)")
         except:
             pass     
