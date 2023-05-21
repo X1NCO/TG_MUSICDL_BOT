@@ -20,7 +20,7 @@ def lyrics(song):
         return text
     
 @Dxbotz.on_message(filters.text & filters.command(["genius"]) & filters.private)
-async def sng(bot, message):  
+async def sng(Dxbotz, message):  
           genius = Genius(genius_api)        
           mee = await message.reply_text("`Searching`")
           try:
