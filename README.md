@@ -28,7 +28,11 @@
 more features coming soon
 
 ### Deploy
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
+[![Deploy on Railway]([https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
+
+[![Deploy on Heroku](https://railway.app/button.svg)](https://heroku.com/deploy?template=https://github.com/DX-MODS/SpotifyDL)
+
+  
 ### Required Variables
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
