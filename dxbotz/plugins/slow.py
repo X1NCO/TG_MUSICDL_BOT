@@ -66,7 +66,7 @@ genius = Genius("ChS_Qz9KzZi-g95xGpYOT6lZhg4Ky9ciZoFFGTY-hatB5Pk7HvPhir3SQInE90k
 #    await foo(c, m, cb=True)
 
 
-@Mbot.on_message(filters.incoming & filters.text & filters.private,group=4)
+@Dxbotz.on_message(filters.incoming & filters.text & filters.private,group=4)
 async def _(c, m):
     try:
         await foo(c, m)
@@ -108,8 +108,8 @@ async def _(c, m):
     finally:
           await m.continue_propagation()
 
-@Mbot.on_callback_query(filters.regex(r"search"))
-async def search(Mbot: Mbot, query: CallbackQuery):
+@Dxbotz.on_callback_query(filters.regex(r"search"))
+async def search(Dxbotz: Dxbotz, query: CallbackQuery):
    ind, index, track= query.data.split("_")
    try:
       message = query.message
@@ -129,7 +129,7 @@ async def search(Mbot: Mbot, query: CallbackQuery):
                 pass
 ## optional you can clear this or add this by using #
                 await message.reply(e)
-          #      await Mbot.send_message(BUG,e)
+          #      await Dxbotz.send_message(BUG,e)
                 await query.message.reply_text(f"[{song.get('name')} - {song.get('artist')}](https://open.spotify.com/track/{song.get('deezer_id')}) Track Not Found ⚠️")
          #       await message.reply_text(f"try `/saavn {song.get('name')} - {song.get('artist')}`")
             thumbnail = await thumb_down(item['album']['images'][0]['url'],song.get('deezer_id'))
@@ -168,12 +168,12 @@ async def search(Mbot: Mbot, query: CallbackQuery):
             await copy(PForCopy,AForCopy)
    except NameError as e:
        pass
-       await Mbot.send_message(BUG,e)
+       await Dxbotz.send_message(BUG,e)
        await query.answer("Your Query Is Too Old ❌")
    except Exception as e: 
        pass
        await query.answer("Sorry, We Are Unable To Procced It 🤕❣️")
-    #   await Mbot.send_message(BUG,f"Query Raised Erorr {e} On {query.message.chat.id} {query.message.from_user.mention}")
+    #   await Dxbotz.send_message(BUG,f"Query Raised Erorr {e} On {query.message.chat.id} {query.message.from_user.mention}")
    finally: 
         await sleep(2.0)
         try:
