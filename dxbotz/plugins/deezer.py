@@ -4,8 +4,8 @@
 #Author ZIYAN
 from pyrogram import filters
 from config import AUTH_CHATS, LOG_GROUP
-from deezer import Client
 from dxbotz import Dxbotz
+from deezer import Client
 from os import mkdir
 from random import randint
 from dxbotz.utils.mainhelper import fetch_tracks,download_dez,parse_deezer_url,thumb_down
@@ -36,8 +36,8 @@ async def link_handler(_, message):
                     await AForCopy.copy(LOG_GROUP)
             await m.delete()
         elif item_type == "artist":
-            await m.edit_text("𝚃𝚑𝚒𝚜 𝙸𝚜 𝙰𝚗 𝙰𝚛𝚝𝚒𝚜𝚝 𝙰𝚌𝚌𝚘𝚞𝚗𝚝 𝙻𝚒𝚗𝚔. 𝚂𝚎𝚗𝚍 𝚖𝚎 𝚃𝚛𝚊𝚌𝚔, 𝙿𝚕𝚊𝚢𝚕𝚒𝚜𝚝 𝚘𝚛 𝙰𝚕𝚋𝚞𝚖 𝙻𝚒𝚗𝚔:)")
+            await m.edit_text("This Is An Artist Account Link. Send me Track, Playlist or Album Link :)")
         else:
-            await m.edit_text("𝙻𝚒𝚗𝚔 𝚃𝚢𝚙𝚎 𝙽𝚘𝚝 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝚏𝚘𝚛 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍.")
+            await m.edit_text("Link Type Not Available for Download.")
     except Exception as e:
         await m.edit_text(f'Error: {e}', quote=True)
