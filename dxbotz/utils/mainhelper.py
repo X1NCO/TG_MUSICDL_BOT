@@ -108,10 +108,11 @@ def fetch_spotify_track(client,item_id):
             "genre": genre,
             "deezer_id": deezer_id,
         }
+
 @sync_to_async
 def download_songs(item, download_directory='.'):
     file = f"{download_directory}/{item['name']} - {item['artists'][0]['name']}"
-    query = f"{item['name']} - {item['artists'][0]['name']} lyrics".replace(":", "").replace("\"", "")
+    query = f"{item['name']} - {item['artists'][0]['name']}".replace(":", "").replace("\"", "")
     ydl_opts = {
         'format': "bestaudio",
         'default_search': 'ytsearch',
@@ -124,7 +125,7 @@ def download_songs(item, download_directory='.'):
         "geo_bypass": True,
 
         "nocheckcertificate": True,
-        "postprocessors": [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'flac', 'preferredquality': '693'}],
+        "postprocessors": [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', 'preferredquality': '320'}],
     }
 
     with YoutubeDL(ydl_opts) as ydl:
@@ -132,27 +133,28 @@ def download_songs(item, download_directory='.'):
             video = ydl.extract_info(f"ytsearch:{query}", download=False)['entries'][0]['id']
             info = ydl.extract_info(video)
             filename = ydl.prepare_filename(info)
-            return f"{filename}.flac"
+            return f"{filename}.mp3"
         except IndexError:
             pass
             quer = f"{item['name']} lyrics"
             video = ydl.extract_info(f"ytsearch:{quer}", download=False)['entries'][0]['id']
             info = ydl.extract_info(video)
             filename = ydl.prepare_filename(info)
-            return f"{filename}.flac" 
+            return f"{filename}.mp3" 
         except (IOError,BrokenPipeError):
             pass
             video = ydl.extract_info(f"ytsearch:{query}", download=False)['entries'][0]['id']
             info = ydl.extract_info(video)
             filename = ydl.prepare_filename(info)
-            return f"{filename}.flac"
+            return f"{filename}.mp3"
         except Exception as e:
             LOGGER.error(e)
+
 
 @sync_to_async
 def download_dez(song, download_directory='.'):
     file = f"{download_directory}/{song['name']} - {song['artist']}"
-    query = f"{song.get('name')} - {song.get('artist')} lyrics".replace(":", "").replace("\"", "")
+    query = f"{song.get('name')} - {song.get('artist')}".replace(":", "").replace("\"", "")
     ydl_opts = {
         'format': "bestaudio",
         'default_search': 'ytsearch',
@@ -189,10 +191,11 @@ def download_dez(song, download_directory='.'):
             return f"{filename}.flac"
         except Exception as e:
             LOGGER.error(e)
+
 @sync_to_async
 def copy(P,A):
-    P.copy(BUG)
-    A.copy(BUG)
+    P.copy(LOG_GROUP)
+    A.copy(LOG_GROUP)
 @sync_to_async
 def forward(A,P):
     A.copy(LOG_GROUP)
