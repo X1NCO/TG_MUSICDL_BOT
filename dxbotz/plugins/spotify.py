@@ -5,7 +5,8 @@ from asyncio import sleep
 import time
 from mutagen.id3 import ID3, APIC,error
 from mutagen.easyid3 import EasyID3
-from dxbotz import AUTH_CHATS, LOGGER, Dxbotz,LOG_GROUP,BUG
+from config import AUTH_CHATS, LOGGER, LOG_GROUP, BUG, ADMIN
+from dxbotz import Dxbotz
 from pyrogram import filters,enums
 from dxbotz.utils.mainhelper import parse_spotify_url,fetch_spotify_track,download_songs,thumb_down,copy,forward 
 from dxbotz.utils.ytdl import getIds,ytdl_down,audio_opt
@@ -35,9 +36,7 @@ from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInv
 #from utils import temp
 #from Script import script
 from pyrogram.errors import ChatAdminRequired
-from dxbotz import BUG,Dxbotz
 from mutagen.mp3 import MP3
-ADMINS = 1794941609
 from requests.exceptions import MissingSchema
 client = Spotify(auth_manager=SpotifyClientCredentials())
 PICS = ("dxbotz/1162775.jpg dxbotz/danny-howe-bn-D2bCvpik-unsplash.jpg dxbotz/saurabh-gill-38RthwbB3nE-unsplash.jpg").split()
