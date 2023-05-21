@@ -1,1 +1,1 @@
-bot: python -m dxbotz
+worker: python -m dxbotz
