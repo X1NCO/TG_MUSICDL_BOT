@@ -23,10 +23,6 @@ from sys import executable
 #scheduler.add_job(restar, "interval", minutes=10)
 #scheduler.start()
 
-@Dxbotz.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
-async def restart(_,message):
-    await message.delete()
-    execvp(sys.executable,[sys.executable,"-m","dxbotz"])
 
 @Dxbotz.on_message(filters.command("log") & filters.chat(SUDO_USERS))
 async def send_log(_,message):
