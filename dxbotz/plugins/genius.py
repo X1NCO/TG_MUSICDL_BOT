@@ -9,7 +9,7 @@ import os
 
 API = "https://apis.xditya.me/lyrics?song="
 
-@Mbot.on_message(filters.text & filters.command(["genius"]) & filters.private)
+@Dxbotz.on_message(filters.text & filters.command(["genius"]) & filters.private)
 async def sng(bot, message):  
           genius = Genius(GENIUS_API)        
           mee = await message.reply_text("`Searching`")
