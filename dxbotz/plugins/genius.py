@@ -1,27 +1,17 @@
-*/from pyrogram import Client, filters
+from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
 from dxbotz import Dxbotz
-from config import genius_api
-import requests 
+from config import 
+import requests GENIUS_API
 from lyricsgenius import Genius 
 import os
 
 
 API = "https://apis.xditya.me/lyrics?song="
 
-def search(song):
-        r = requests.get(API + song)
-        find = r.json()
-        return find
-       
-def lyrics(song):
-        fin = search(song)
-        text = fin["lyrics"]
-        return text
-    
-@Dxbotz.on_message(filters.text & filters.command(["genius"]) & filters.private)
-async def sng(Dxbotz, message):  
-          genius = Genius(genius_api)        
+@Mbot.on_message(filters.text & filters.command(["genius"]) & filters.private)
+async def sng(bot, message):  
+          genius = Genius(GENIUS_API)        
           mee = await message.reply_text("`Searching`")
           try:
               song = message.text.split(None, 1)[1] #.lower().strip().replace(" ", "%20")
@@ -36,6 +26,18 @@ async def sng(Dxbotz, message):
             await mee.delete()
             await message.reply(rpl)
           except Exception as e:                            
-             await message.reply_text(f"lyrics does not found for `{song} {e}`") #", quote = True, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url = f"https://t.me/Spotify newss")]]))
+             await message.reply_text(f"lyrics does not found for `{song} {e}`") #", quote = True, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url = f"https://t.me/DxSpotifyDlbot")]]))
           finally:
-            await message.reply("Check out @spotify_downloa_bot(music)  @spotifynewss(News)")/*
+            await message.reply("Check out @dxmodsupdates(Updates)  @https://t.me/DXMODS_Support(Support)")
+
+
+
+def search(song):
+        r = requests.get(API + song)
+        find = r.json()
+        return find
+       
+def lyrics(song):
+        fin = search(song)
+        text = fin["lyrics"]
+        return text
