@@ -1,8 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
 from dxbotz import Dxbotz
-from config import 
-import requests GENIUS_API
+from config import GENIUS_API
+import requests
 from lyricsgenius import Genius 
 import os
 
