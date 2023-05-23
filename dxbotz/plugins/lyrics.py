@@ -48,7 +48,7 @@ async def lyrics(dxbot:Dxbotz,msg: Message):
         )
         await msg.reply_document(
             document=f'downloads/{lyric_title}.txt',
-            thumb='src/Medusa320px.png',
+            thumb='dxbotz/utils/dxspotifyld.jpg',
             caption=f'\n__--{lyric_title}--__\n__{lyric_artist}__\n\n__Extracted by @DxSpotifyDlbot'
         )
 
