@@ -1,4 +1,4 @@
-from pyrogram import Client, filters
+*/from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
 from dxbotz import Dxbotz
 from config import genius_api
@@ -38,4 +38,4 @@ async def sng(Dxbotz, message):
           except Exception as e:                            
              await message.reply_text(f"lyrics does not found for `{song} {e}`") #", quote = True, reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url = f"https://t.me/Spotify newss")]]))
           finally:
-            await message.reply("Check out @spotify_downloa_bot(music)  @spotifynewss(News)")
+            await message.reply("Check out @spotify_downloa_bot(music)  @spotifynewss(News)")/*
