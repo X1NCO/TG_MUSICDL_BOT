@@ -16,7 +16,6 @@ api = genius.Genius(GENIUS_API,verbose=False)
 
 @Dxbotz.on_message(filters.command(['lyrics','lyric'],prefixes=['/','!']) 
     & (filters.group | filters.private) 
-    & ~ filters.edited)
 async def lyrics(dxbot:Dxbotz,msg: Message):
 
     if len(msg.command) == 1:
