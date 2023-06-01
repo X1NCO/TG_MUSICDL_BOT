@@ -47,7 +47,7 @@ ID - <code>{}</code>
 Name - {}
 """
 pre = []
-@Dxbotz.on_message(filters.regex(r'https?://[^\s]+') & filters.incoming & filters.private | filters.incoming & filters.private & filters.regex(r"spotify:"), group=1)
+@Dxbotz.on_message(filters.incoming & filters.regex(r'https?://open.spotify.com[^\s]+') | filters.incoming & filters.regex(r'https?://spotify.link[^\s]+'), group=-2)
 async def spotify_dl(Dxbotz,message: Message):
     if MAIN:
        await message.reply_text(f"Bot Is Under Maintenance ⚠️")
