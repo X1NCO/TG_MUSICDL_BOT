@@ -334,7 +334,7 @@ async def spotify_dl(Dxbotz,message: Message):
                     audio["DATE"] = song.get('year')
                     audio["discnumber"] =f" {item['disc_number']}"
                     audio["tracknumber"] =f" {item['track_number']}"
-                    try:
+                    try:pppppp 
                         audio["ISRC"] =f" {item['external_ids']['isrc']}"
                     except:
                         pass
