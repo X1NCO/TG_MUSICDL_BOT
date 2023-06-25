@@ -276,11 +276,14 @@ async def spotify_dl(Dxbotz,message: Message):
                 try:
                    audio = MP3(path, ID3=ID3)
                    audio.tags.add(APIC(mime='image/jpeg',type=3,desc=u'Cover',data=open(thumbnail,'rb').read()))
-                except Exception as e:
+                except Exceptio
+                
+                -1001744816254n as e:
                     pass
-                audio.save()
+                audio.save() to 
                 try:
-                    AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,parse_mode=enums.ParseMode.MARKDOWN,quote=True)  
+                    AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('
+                    ')}yll",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,parse_mode=enums.ParseMode.MARKDOWN,quote=True)  
                 except:
                   pass
                 #AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,parse_mode=enums.ParseMode.MARKDOWN,quote=True)
@@ -334,7 +337,7 @@ async def spotify_dl(Dxbotz,message: Message):
                     audio["DATE"] = song.get('year')
                     audio["discnumber"] =f" {item['disc_number']}"
                     audio["tracknumber"] =f" {item['track_number']}"
-                    try:pppppp 
+                    try: 
                         audio["ISRC"] =f" {item['external_ids']['isrc']}"
                     except:
                         pass
@@ -347,47 +350,45 @@ async def spotify_dl(Dxbotz,message: Message):
                     pass
                 audio.save()
                 try:
-                   audio = MP3(path, ID3=ID3)
-                   audio.tags.add(APIC(mime='image/jpeg',type=3,desc=u'Cover',data=open(thumbnail,'rb').read()))
+                   audio = MP3(path, ID3=ID3)                 audio.tags.add(APIC(mime='image/jpeg',type=3,desc=u'Cover',data=open(thumbnail,'rb').read()))
                 except Exception as e:
                    pass
                    print(e)
                 audio.save()
                 if not path:
-                           await message.reply_text(f"⚠️")
                 else:
-                    AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,parse_mode=enums.ParseMode.MARKDOWN,quote=True)
                 await copy(PForCopy,AForCopy)
+                    AForCopy = await message.reply_audio(path,performer=song.get('artist'),title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail,parse_mode=enums.ParseMode.MARKDOWN,quote=True)
+                           await message.reply_texlt(f"⚠️")
            
-        elif item_type == "artist":
              art = client.artist(item_id)
+        elif item_type == "artist":
              try:
-                 PForCopy = await message.reply_photo(art['images'][0]['url'],
                  caption=f"👤Artist: **{art['name']}­**\n❤️Followers:{art['followers']['total']}­\n🎶Generes:{art['genres']}­\n🗂Category:{art['type']}­\n❤️Popularity:{art['popularity']}­\n\n[IMAGE]({art['images'][0]['url']})\nArtist id:`{art['id']}`")
-              #   await message.reply_document(art['images'][0]['url'])
              except Exception as e:
+                 PForCopy = await message.reply_photo(art['images'][0]['url'],
+              #   await message.reply_document(art['images'][0]['url'])
                  pass
-                 await message.reply(f"👤Artist: **{art['name']}­**\n❤️Followers:{art['followers']['total']}­\n🎶Generes:{art['genres']}­\n🗂Category:{art['type']}­\n❤️Popularity:{art['popularity']}­\n\n[IMAGE]({art['images'][0]['url']})\nArtist id:`{art['id']}`")     
-             
            #  if u in PREM:
+             
           #      tracks = client.artist_albums(artist_id=item_id)
              #else:
-             await message.reply(f"Sending Top 10 tracks of {art['name']}")
              tracks = client.artist_top_tracks(artist_id=item_id,)
+             await message.reply(f"Sending Top 10 tracks of {art['name']}")
              for item in tracks['tracks'][:10]:
                  song = await fetch_spotify_track(client,item.get('id'))
                  track = client.track(track_id=item['id'])
                  track_no = 1
-                 await sleep(0.6)
                  try:
+                 await sleep(0.6)
                      path = await download_songs(item,randomdir)
-                 except Exception as e:
                      pass
+                 except Exception as e:
 ## optional you can clear this or add this by using #
                      await message.reply(e)
-                     await message.reply_text(f"[{song.get('name')} - {song.get('artist')}](https://open.spotify.com/track/{song.get('deezer_id')}) Track Not Found ⚠️")
             #         await message.reply_text(f"try `/saavn {song.get('name')} - {song.get('artist')}`")
             #         await message.reply(f"[Click Here](https://t.me/)")
+                     await message.reply_text(f"[{song.get('name')} - {song.get('artist')}](https://open.spotify.com/track/{song.get('deezer_id')}) Track Not Found ⚠️")
                  thumbnail = await thumb_down(song.get('cover'),song.get('deezer_id'))
                  audio = EasyID3(path)
                  try:
@@ -400,12 +401,12 @@ async def spotify_dl(Dxbotz,message: Message):
                      audio["ALBUM"] = song.get('album')
                      audio["DATE"] = song.get('year')
                      audio["discnumber"] =f" {track['disc_number']}"
+                     audio["discnumber"] =f" {track['disc_number']}"
                      audio["tracknumber"] =f" {track['track_number']}"
                      try:
                          audio["ISRC"] =f" {track['external_ids']['isrc']}"
                      except:
                          pass
-                     try:
                         songGenius = genius.search_song(song('name'), song('artist'))
                         audio["LYRICS"] = (songGenius.lyrics)
                      except:
@@ -420,6 +421,9 @@ async def spotify_dl(Dxbotz,message: Message):
                    pass
                   # print(e)
                  audio.save()
+                 AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}­",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail, parse_mode=enums.ParseMode.MARKDOWN,quote=True)
+                 AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}­",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail, parse_mode=enums.ParseMode.MARKDOWN,quote=True)
+                 AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}­",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail, parse_mode=enums.ParseMode.MARKDOWN,quote=True)
                  AForCopy = await message.reply_audio(path,performer=f"{song.get('artist')}­",title=f"{song.get('name')} - {song.get('artist')}",caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",thumb=thumbnail, parse_mode=enums.ParseMode.MARKDOWN,quote=True)
                  await copy(PForCopy,AForCopy)
     except MissingSchema:
