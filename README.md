@@ -27,11 +27,12 @@
 - [x] terminal cmds
 more features coming soon
 
-### Deploy
-[![Deploy on Railway]([https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
-
-[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DX-MODS/SpotifyDL)
-
+### Railway
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
+### Heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/DX-MODS/Telegraph-Bot&template=https://github.com/DX-MODS/Telegraph-Bot.git)
+### Koyeb
+Coming Soon
   
 ### Required Variables
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
