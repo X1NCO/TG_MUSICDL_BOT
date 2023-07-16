@@ -30,7 +30,7 @@ more features coming soon
 ### Deploy
 [![Deploy on Railway]([https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
 
-[![Deploy on Heroku](https://railway.app/button.svg)](https://heroku.com/deploy?template=https://github.com/DX-MODS/SpotifyDL)
+[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DX-MODS/SpotifyDL)
 
   
 ### Required Variables
