@@ -11,6 +11,9 @@
 <a href="https://github.com/DX-MODS/SpotifyDL"> <img src="https://img.shields.io/github/repo-size/DX-MODS/SpotifyDL?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
 <a href="https://github.com/DX-MODS/SpotifyDL/commits/DX-MODS"> <img src="https://img.shields.io/github/last-commit/DX-MODS/SpotifyDL?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 
+###Donate
+
+
 <div align="left">
 
 ### Features
