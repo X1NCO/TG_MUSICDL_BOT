@@ -11,9 +11,6 @@
 <a href="https://github.com/DX-MODS/SpotifyDL"> <img src="https://img.shields.io/github/repo-size/DX-MODS/SpotifyDL?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
 <a href="https://github.com/DX-MODS/SpotifyDL/commits/DX-MODS"> <img src="https://img.shields.io/github/last-commit/DX-MODS/SpotifyDL?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 
-###Donate
-
-
 <div align="left">
 
 ### Features
@@ -29,6 +26,9 @@
 - [x] Shell cmds
 - [x] terminal cmds
 more features coming soon
+
+### Donate
+<a href="https://www.buymeacoffee.com/ziyankp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 200px !important;" ></a>
 
 ### Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
