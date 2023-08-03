@@ -33,7 +33,7 @@ more features coming soon
 ### Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
 ### Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/DX-MODS/Telegraph-Bot&template=https://github.com/DX-MODS/Telegraph-Bot.git)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/DX-MODS/SpotifyDL&template=https://github.com/DX-MODS/SpotifyDL.git)
 ### Koyeb
 Coming Soon
   
