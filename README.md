@@ -14,27 +14,17 @@
 <div align="left">
 
 ### Features
-✅Added Shazzam Feature
-
-✅ Spotify Query Download
-
-✅ Also works sharing spotify link
-
-✅ Added deezer download works link
-
-✅ Youtube download works link
-
-✅ Admin Commands
-
-✅ Broadcast
-
-✅ Download lyrics
-
-✅ Added server status
-
-✅ Shell cmds
-
-✅ terminal cmds
+* `✅` Added Shazzam Feature
+* `✅` Spotify Query Download
+* `✅` Also works sharing spotify link
+* `✅` Added deezer download works link
+* `✅` Yt song download works link
+* `✅` Added Admin Commands
+* `✅` Added Broadcast
+* `✅` Added Download lyrics
+* `✅` Added server status
+* `✅` Added Shell cmds
+* `✅` Added terminal cmds
 
 more features coming soon
 
