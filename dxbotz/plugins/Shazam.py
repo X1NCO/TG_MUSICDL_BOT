@@ -1,11 +1,12 @@
 # Copyright (C) 2023 DX_MODS
-#Licensed under the  AGPL-3.0 License;
+#Licensed under the MIT License;
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
 # Copyright (C) 2023 DX_MODS
 #Licensed under the  AGPL-3.0 License;
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
+
 from __future__ import unicode_literals 
 from os import environ,execl
 from sys import executable
@@ -13,29 +14,18 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message , InlineKeyboardMarkup, InlineKeyboardButton ,CallbackQuery
 from pyrogram.errors import FloodWait 
 from asyncio import sleep
-#from database.users_chats_db import db
-#from utils import get_size
 from shazamio import Shazam
-#import math
 import asyncio
 import time
-#import shlex
-#import aiofiles
-#import aiohttp
-#import wget
 import os
-#from asgiref.sync import sync_to_async
 from requests import get
 from dxbotz.utils.util import run_cmd as runcmd
 import datetime
 from json import JSONDecodeError
 import requests
-#import ffmpeg 
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-#from youtubesearchpython import VideosSearch
 import yt_dlp
-#from youtube_search import YoutubeSearch
 import requests
 from typing import Tuple
 from pyrogram import filters
