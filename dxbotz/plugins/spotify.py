@@ -1,7 +1,7 @@
 from pyrogram.errors import FloodWait,Forbidden,UserIsBlocked,MessageNotModified,ChatWriteForbidden, SlowmodeWait 
 from asyncio import sleep
 import time
-from config import AUTH_CHATS, LOGGER, LOG_GROUP, BUG, ADMIN
+from config import AUTH_CHATS, LOGGER, LOG_GROUP, BUG, ADMIN, MAINTENANCE
 MAINTENANCE = bool(environ.get('MAINTENANCE', None))
 from dxbotz import Dxbotz
 from pyrogram import filters,enums
