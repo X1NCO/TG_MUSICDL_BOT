@@ -1,7 +1,7 @@
 from pyrogram.errors import FloodWait,Forbidden,UserIsBlocked,MessageNotModified,ChatWriteForbidden, SlowmodeWait 
 from asyncio import sleep
 import time
-from config import AUTH_CHATS, LOGGER, LOG_GROUP, BUG, ADMIN
+from config import AUTH_CHATS, LOGGER, LOG_GROUP, BUG, ADMIN, MAINTENANCE
 from dxbotz import Dxbotz
 from pyrogram import filters,enums
 from dxbotz.utils.mainhelper import parse_spotify_url,fetch_spotify_track,download_songs,thumb_down,copy,forward 
@@ -26,7 +26,6 @@ from requests import head
 from requests.exceptions import MissingSchema
 client = Spotify(auth_manager=SpotifyClientCredentials())
 PICS = ("dxbotz/1162775.jpg mbot/danny-howe-bn-D2bCvpik-unsplash.jpg mbot/saurabh-gill-38RthwbB3nE-unsplash.jpg").split()
-MAIN = bool(environ.get('MAIN', None))
 genius = Genius("api_key")
 LOG_TEXT_P = """
 ID - <code>{}</code>
@@ -34,7 +33,7 @@ Name - {}
 """
 @Dxbotz.on_message(filters.incoming & filters.regex(r'https?://open.spotify.com[^\s]+') | filters.incoming & filters.regex(r'https?://spotify.link[^\s]+'), group=-2)
 async def spotify_dl(Dxbotz,message: Message):
-    if MAIN:
+    if MAINTENANCE:
        await message.reply_text(f"Bot Is Under Maintenance ⚠️")
        return
     link = message.matches[0].group(0)
