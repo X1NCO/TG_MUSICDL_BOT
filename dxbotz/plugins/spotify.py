@@ -1,7 +1,8 @@
 from pyrogram.errors import FloodWait,Forbidden,UserIsBlocked,MessageNotModified,ChatWriteForbidden, SlowmodeWait 
 from asyncio import sleep
 import time
-from config import AUTH_CHATS, LOGGER, LOG_GROUP, BUG, ADMIN, MAINTENANCE
+from config import AUTH_CHATS, LOGGER, LOG_GROUP, BUG, ADMIN
+MAIN = bool(environ.get('MAIN', None))
 from dxbotz import Dxbotz
 from pyrogram import filters,enums
 from dxbotz.utils.mainhelper import parse_spotify_url,fetch_spotify_track,download_songs,thumb_down,copy,forward 
