@@ -41,5 +41,6 @@ BUG = environ.get("BUG", None)
 if BUG:
     BUG = int(BUG)
 GENIUS_API = environ.get("GENIUS_API",None)
+MAINTENANCE = bool(os.environ.get("MAINTENANCE", True))
 if GENIUS_API:
     GENIUS_API = GENIUS_API
