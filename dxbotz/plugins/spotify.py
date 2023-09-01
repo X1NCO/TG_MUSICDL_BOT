@@ -452,7 +452,7 @@ async def spotify_dl(Dxbotz,message: Message):
         try:
             await message.reply_text(f"Done✅",   
          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Feedback", callback_data="feed")]]))
-            await message.reply_text(f"Check out @spotify_downloa (music)  @spotifynewss(News)")
+            await message.reply_text(f"Check out @Denjimusicbot (Music Bot)")
             await m.delete()
         except:
             pass 
@@ -461,7 +461,7 @@ async def spotify_dl(Dxbotz,message: Message):
 async def feedback(Dxbotz,query):
       try:
           K = await query.message.edit(f"Feedback 🏴‍☠️",
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=spotify_downloa_bot")]]))
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/makimamusic_support")]]))
           H = print("New Feedback")
           if BUG:
              await copy(K,H)
