@@ -21,6 +21,6 @@ class dx(object):
 """
 
     DEV_TXT = """
-<b><u>𝑆𝑝𝑒𝑐𝑖𝑎𝑙 𝑇ℎ𝑎𝑛𝑘𝑠 𝑇� <a href=https://t.me/Pervy_Sensei>RUDRA?</a>  <a href=https://t.me/Pandaloveuhhh>REX</a>  <a href=https://t.me/NatsuSenpai>NATSU</a>  <a href=https://t.me/SR5317>SHIVAM</a>
 » 𝑫𝑬𝑽 : <a href=https://t.me/Cicadasuss>𝐻𝑎𝑟𝑠ℎ 𝐽ℎ𝑎♞</a>
+» <b><u>𝑆𝑝𝑒𝑐𝑖𝑎𝑙 𝑇ℎ𝑎𝑛𝑘𝑠 𝑇o <a href=https://t.me/Pervy_Sensei>RUDRA?</a>  <a href=https://t.me/Pandaloveuhhh>REX</a>  <a href=https://t.me/NatsuSenpai>NATSU</a>  <a href=https://t.me/SR5317>SHIVAM</a>
 """
