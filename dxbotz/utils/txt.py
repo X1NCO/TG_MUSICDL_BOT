@@ -5,13 +5,9 @@
 class dx(object):
     ABOUT_TXT = """
 ╭───────────⍟
-├🤖 𝙼𝚈 𝙽𝙰𝙼𝙴 : 𝚂𝙿𝙾𝚃𝙸𝙵𝚈 𝙳𝙻
-├👑 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂 : <a href=https://t.me/dxziyan>𝚉𝙸𝚈𝙰𝙽</a> 
-├👨‍💻 𝙿𝚁𝙾𝙶𝚁𝙰𝙼𝙴𝚁 : <a href=https://github.com/DX-MODS>𝙳𝚇-𝙼𝙾𝙳𝚂</a>
-├📕 𝙻𝙸𝙱𝚁𝙰𝚁𝚈 : <a href=https://github.com/pyrogram>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼</a>
-├✏️ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 : <a href=https://www.python.org>𝙿𝚈𝚃𝙷𝙾𝙽 3</a>
-├💾 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴 : <a href=https://cloud.mongodb.com>𝙼𝙾𝙽𝙶𝙾𝙳𝙱</a>
-├📊 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚄𝚂 : v1.0             
+├🤖 𝙼𝚈 𝙽𝙰𝙼𝙴 : MAKIMA MUSIC DOWNLOADER 🫶🏻
+├👑 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂 : <a href=https://t.me/Cicadasuss>𝐻𝑎𝑟𝑠ℎ 𝐽ℎ𝑎♞</a>
+├👽 𝐹𝑜𝑟 𝑃𝑟𝑜𝑚𝑜/𝑅𝑒𝑝𝑜 : <a href=https://t.me/Lazyxinco>𝐿𝑎𝑧𝑦 𝑃𝑒𝑛𝑔𝑢𝑖𝑛卐</a>
 ╰───────────────⍟
                                 """
     HELP_TXT = """
@@ -21,13 +17,10 @@ class dx(object):
 •> /to download songs you can send Spotify url here playlist or song url supported flac .
 •> /lyrics and song name to download lyrics of any song.
 •> /ping to check ping of the bot.
-•> /
-ℹ️ 𝗔𝗻𝘆 𝗢𝘁𝗵𝗲𝗿 𝗛𝗲𝗹𝗽 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 :- <a href=https://t.me/DXMODS_Support>𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿</a>
+ℹ️ 𝗔𝗻𝘆 𝗢𝘁𝗵𝗲𝗿 𝗛𝗲𝗹𝗽 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 :- <a href=https://t.me/makimamusic_support>𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿</a>
 """
 
-#⚠️ don't remove our credits 🙏😢😢
     DEV_TXT = """
-<b><u>𝚂𝚙𝚎𝚌𝚒𝚊𝚕 𝚝𝚑𝚊𝚗𝚔𝚜 𝚝𝚘 𝚊𝚕𝚕 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛𝚜</b></u> 
-» 𝗦𝗢𝗨𝗥𝗖𝗘 𝗖𝗢𝗗𝗘 : <a href=https://github.com/DX-MODS/SpotifyDL>𝚂𝙿𝙾𝚃𝙸𝙵𝚈 𝙳𝙻</a>
-» 𝗛𝗢𝗪 𝗧𝗢 𝗗𝗘𝗣𝗟𝗢𝗬 : <a href=https://youtube.com/@DX-MODS</a>
+<b><u>𝑆𝑝𝑒𝑐𝑖𝑎𝑙 𝑇ℎ𝑎𝑛𝑘𝑠 𝑇� <a href=https://t.me/Pervy_Sensei>RUDRA?</a>  <a href=https://t.me/Pandaloveuhhh>REX</a>  <a href=https://t.me/NatsuSenpai>NATSU</a>  <a href=https://t.me/SR5317>SHIVAM</a>
+» 𝑫𝑬𝑽 : <a href=https://t.me/Cicadasuss>𝐻𝑎𝑟𝑠ℎ 𝐽ℎ𝑎♞</a>
 """
