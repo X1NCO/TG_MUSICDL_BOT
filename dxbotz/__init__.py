@@ -41,7 +41,7 @@ class Dxbotz(Client):
         if not path.exists('/tmp/thumbnails/'):
             mkdir('/tmp/thumbnails/')
         for chat in AUTH_CHATS:
-            await self.send_photo(chat,"https://telegra.ph/file/97bc8a091ac1b119b72e4.jpg","**SpotifyDl Started**")
+            await self.send_photo(chat,"https://telegra.ph/Bot-Started-09-02","**𝑀𝑎𝑘𝑖𝑚𝑎 𝑆𝑡𝑎𝑟𝑡𝑒𝑑 🎧**")
         LOGGER.info(f"Bot Started As {BOT_INFO.username}\n")
     
     async def stop(self,*args):
