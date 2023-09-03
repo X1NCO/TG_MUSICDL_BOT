@@ -1,7 +1,3 @@
-# Copyright (C) 2023 DX_MODS
-#Licensed under the MIT License;
-#you may not use this file except in compliance with the License.
-#Author ZIYAN
 
 from __future__ import unicode_literals 
 from os import environ,execl
@@ -97,7 +93,7 @@ async def shazam_(client, message):
         return await msg.edit("`𝙽𝚘 𝚁𝚎𝚜𝚞𝚕𝚝𝚜 𝙵𝚘𝚞𝚗𝚍.`")
     etime = time.time()
     t_k = round(etime - stime)
-    caption = f"""<b><u>𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚎𝚍 𝙱𝚢 @DxSpotifyDlbot</b></u>
+    caption = f"""<b><u>𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚎𝚍 𝙱𝚢 @makimalistens_bot</b></u>
     
 <b>Song Name :</b> <code>{title}</code>
 <b>Singer :</b> <code>{by}</code>
@@ -105,7 +101,7 @@ async def shazam_(client, message):
 <b>Size :</b> <code>{size_}</code>
 <b>Time Taken :</b> <code>{t_k} Seconds</code>
 
-<b><u>𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚎𝚍 𝙱𝚢 @DxSpotifyDlbot</b></u>
+<b><u>𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚎𝚍 𝙱𝚢 @makimalistens_bot</b></u>
     """
     if thumb:
         await msg.delete()
