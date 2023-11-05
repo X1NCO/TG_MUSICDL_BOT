@@ -19,12 +19,12 @@ async def start(client, message):
         await db.add_user(user.id)             
     txt=f"👋 Hai {user.mention} \n𝙸'𝚖 𝙰 𝚊𝚍𝚟𝚊𝚗𝚌𝚎𝚍 𝚖𝚞𝚜𝚒𝚌 𝚍𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚎𝚛 𝚜𝚞𝚙𝚙𝚘𝚛𝚝𝚜 𝚂𝚙𝚘𝚝𝚒𝚏𝚢 𝚍𝚎𝚎𝚣𝚎𝚛 𝚢𝚘𝚞𝚝𝚞𝚋𝚎 𝚜𝚊𝚊𝚟𝚗!"
     button=InlineKeyboardMarkup([[
-        InlineKeyboardButton("👼 𝙳𝙴𝚅𝚂 👼", callback_data='dev')
+        InlineKeyboardButton("📺 𝙳𝙴𝚅𝚂 📺", callback_data='dev')
         ],[
-        InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/dxmodsupdates'),
-        InlineKeyboardButton('🍂 𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/DXMODS_Support')
+        InlineKeyboardButton('📣 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/Makima_update'),
+        InlineKeyboardButton('🎧 𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/makimamusic_support')
         ],[
-        InlineKeyboardButton('🍃 𝙰𝙱𝙾𝚄𝚃', callback_data='about'),
+        InlineKeyboardButton('👓 𝙰𝙱𝙾𝚄𝚃', callback_data='about'),
         InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿', callback_data='help')
         ]])
     if START_PIC:
@@ -39,12 +39,12 @@ async def cb_handler(client, query: CallbackQuery):
         await query.message.edit_text(
             text=f""" Hey {query.from_user.mention}🫶🏻 \n𝙸'𝚖 𝙰 𝚊𝚍𝚟𝚊𝚗𝚌𝚎𝚍 𝚖𝚞𝚜𝚒𝚌 𝚍𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚎𝚛 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 for 𝚂𝚙𝚘𝚝𝚒𝚏𝚢 D𝚎𝚎𝚣𝚎𝚛 Y𝚘𝚞𝚝𝚞𝚋𝚎 S𝚊𝚊𝚟A𝚗! """,
             reply_markup=InlineKeyboardMarkup( [[
-                InlineKeyboardButton("👼 𝙳𝙴𝚅𝚂 👼", callback_data='dev')                
+                InlineKeyboardButton("📺 𝙳𝙴𝚅𝚂 📺", callback_data='dev')                
                 ],[
-                InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/Makima_update'),
+                InlineKeyboardButton('📣 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/Makima_update'),
                 InlineKeyboardButton('🎧 𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/makimamusic_support')
                 ],[
-                InlineKeyboardButton('👾 𝙰𝙱𝙾𝚄𝚃', callback_data='about'),
+                InlineKeyboardButton('👓 𝙰𝙱𝙾𝚄𝚃', callback_data='about'),
                 InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿', callback_data='help')
                 ]]
                 )
