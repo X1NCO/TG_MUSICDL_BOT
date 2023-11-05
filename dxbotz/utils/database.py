@@ -1,4 +1,4 @@
-## Copyright (C) 2023 DX_MODS
+# Copyright (C) 2023 DX_MODS
 #Licensed under the  AGPL-3.0 License;
 #you may not use this file except in compliance with the License.
 #Author ZIYAN
@@ -50,3 +50,7 @@ class Database:
 
     async def get_caption(self, id):
         user = await self.col.find_one({'_id': int(id)})
+        return user.get('caption', None)
+
+
+db = Database(DB_URL, DB_NAME)
