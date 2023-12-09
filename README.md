@@ -3,15 +3,6 @@
 </p>
 
 
-<a href="https://github.com/DX-MODS/SpotifyDL/stargazers"><img src="https://img.shields.io/github/stars/DX-MODS/SpotifyDL?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
-<a href="https://github.com/DX-MODS/SpotifyDL/network/members"> <img src="https://img.shields.io/github/forks/DX-MODS/SpotifyDL?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
-<a href="https://github.com/DX-MODS/SpotifyDL/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License- GPL 2.0 license -blueviolet?style=for-the-badge" alt="License" /> </a>
-<a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-skyblue?style=for-the-badge&logo=python" alt="Python" /> </a>
-<a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=white&label=pyrogram&logo=python&logoColor=blue&style=for-the-badge" /></a>
-<a href="https://github.com/DX-MODS/SpotifyDL"> <img src="https://img.shields.io/github/repo-size/DX-MODS/SpotifyDL?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
-<a href="https://github.com/DX-MODS/SpotifyDL/commits/DX-MODS"> <img src="https://img.shields.io/github/last-commit/DX-MODS/SpotifyDL?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
-
-<div align="left">
 
 ### Features
 * `✅` Added Shazzam Feature
@@ -29,14 +20,13 @@
 more features coming soon
 
 ### Donate
-<a href="https://www.buymeacoffee.com/ziyankp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 200px !important;" ></a>
+<a href="https://www.buymeacoffee.com/X1nco" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 200px !important;" ></a>
 
 ### Railway
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/OUQm4b?referralCode=DX-MODS)
 ### Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://github.com/DX-MODS/SpotifyDL&template=https://github.com/DX-MODS/SpotifyDL.git)
-### Koyeb
-Coming Soon
+
   
 ### Required Variables
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
@@ -66,12 +56,7 @@ broadcast - to broadcast a message to all users
 
 ## TELAGRAM SUPPORT 
 
-* [![DX-MODS](https://img.shields.io/static/v1?label=DX&message=MODS&color=critical)](https://t.me/dxmodsupdates)
-
-## Disclaimer
-[![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)    
-Licensed under [GNU AGPL 2.0.](https://github.com/DX-MODS/SpotifyDL/blob/master/LICENSE)
-Don't copy the codes and re distribute without my license and credits is strictly prohibited as per the license provided here
+* [![DX-MODS](https://img.shields.io/static/v1?label=X1NCO&message=7&color=critical)](https://t.me/x1nco)
 
 
 
